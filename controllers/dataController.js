@@ -5,7 +5,6 @@ const controller = {
         return res.render('index', {
             users: data.users,
             posts: data.posts,
-            buscarUser: data.buscarUsuario
         })
     }
 }

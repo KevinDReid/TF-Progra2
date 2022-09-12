@@ -142,17 +142,23 @@ const data = {
             postsNumber: 1
         },
     ],
-    buscarUsuario: function(userId){
-        let resultado = []
-        for (let i = 0; i < users.length; i++) {
-            const element = users[i].username;
-            if (user[i].userId == userId){
-                resultado.push(element)
-            }
+    // buscarUsuario: function(userId){
+    //     let resultado = []
+    //     for (let i = 0; i < users.length; i++) {
+    //         const element = users[i].username;
+    //         if (user[i].userId == userId){
+    //             resultado.push(element)
+    //         }
             
-        }
-        return resultado
-    }
-
+    //     }
+    //     return resultado
+    // }
+    buscarUsername: function buscarUsername(){ 
+        results = []
+        for(let a = 0; a<users.length; a++ ) { 
+            if(posts[i].userId == users[i].userId){
+                results.push(users[i].username) 
+            } }
+        return results}
 }
 module.exports = data;
