@@ -7,6 +7,10 @@ a {
   color: #00B7FF;
 }
 /* Generics */
+.userImg {
+  max-width: 40px;
+  max-height: 40px;
+}
 *{
   box-sizing: border-box;
 }

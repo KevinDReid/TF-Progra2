@@ -10,9 +10,9 @@
         <% for( let i = 0; i < posts.length; i++ ) { %>
         <article class="post">
           <div class="info-usuario">
-            <img src="https://via.placeholder.com/40" alt="" />
+            <img class="userImg" src="<%= posts[i].userImg %> " alt="" />
             <h4>
-              <a href="detalleUsuario.html"> </a>
+              <a href="detalleUsuario.html"><%= posts[i].username + [i] %> </a>
             </h4>
           </div>
           <div class="post-body">
@@ -22,7 +22,7 @@
           </div>
           <ul class="post-reacciones">
             <li>
-              <i class="fa-regular fa-heart"></i>
+              <i class="fa-regular fa-heart"> <%= posts[i].likes %> </i>
             </li>
             <li>
               <i class="fa-regular fa-comment"></i>
@@ -51,129 +51,6 @@
         </article>
 
         <% } %>
-        <article class="post">
-          <div class="info-usuario">
-            <img src="https://via.placeholder.com/40" alt="" />
-            <h4>
-              <a href="detalleUsuario.html">Usuario</a>
-            </h4>
-          </div>
-          <div class="post-body">
-            <a href="detallePost.html">
-              <img src="https://via.placeholder.com/500x600" alt="" />
-            </a>
-          </div>
-          <ul class="post-reacciones">
-            <li>
-              <i class="fa-regular fa-heart"></i>
-            </li>
-            <li>
-              <i class="fa-regular fa-comment"></i>
-            </li>
-          </ul>
-          <div class="post-comentarios">
-            <h4>Comentarios</h4>
-            <ul>
-              <li>
-                <a href="detalleUsuario.html">Usuario</a>
-                <span
-                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi</span
-                >
-              </li>
-              <li>
-                <a href="detalleUsuario.html">Usuario</a>
-                <span
-                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi</span
-                >
-              </li>
-              <a href="detallePost.html">Ver más...</a>
-            </ul>
-          </div>
-        </article>
-        <article class="post">
-          <div class="info-usuario">
-            <img src="https://via.placeholder.com/40" alt="" />
-            <h4>
-              <a href="detalleUsuario.html">Usuario</a>
-            </h4>
-          </div>
-          <div class="post-body">
-            <a href="detallePost.html">
-              <img src="https://via.placeholder.com/500x600" alt="" />
-            </a>
-          </div>
-          <ul class="post-reacciones">
-            <li>
-              <i class="fa-regular fa-heart"></i>
-            </li>
-            <li>
-              <i class="fa-regular fa-comment"></i>
-            </li>
-          </ul>
-          <div class="post-comentarios">
-            <h4>Comentarios</h4>
-            <ul>
-              <li>
-                <a href="detalleUsuario.html">Usuario</a>
-                <span
-                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi</span
-                >
-              </li>
-              <li>
-                <a href="detalleUsuario.html">Usuario</a>
-                <span
-                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi</span
-                >
-              </li>
-              <a href="detallePost.html">Ver más...</a>
-            </ul>
-          </div>
-        </article>
-        <article class="post">
-          <div class="info-usuario">
-            <img src="https://via.placeholder.com/40" alt="" />
-            <h4>
-              <a href="detalleUsuario.html">Usuario</a>
-            </h4>
-          </div>
-          <div class="post-body">
-            <a href="detallePost.html">
-              <img src="https://via.placeholder.com/500x600" alt="" />
-            </a>
-          </div>
-          <ul class="post-reacciones">
-            <li>
-              <i class="fa-regular fa-heart"></i>
-            </li>
-            <li>
-              <i class="fa-regular fa-comment"></i>
-            </li>
-          </ul>
-          <div class="post-comentarios">
-            <h4>Comentarios</h4>
-            <ul>
-              <li>
-                <a href="detalleUsuario.html">Usuario</a>
-                <span
-                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi</span
-                >
-              </li>
-              <li>
-                <a href="detalleUsuario.html">Usuario</a>
-                <span
-                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi</span
-                >
-              </li>
-              <a href="detallePost.html">Ver más...</a>
-            </ul>
-          </div>
-        </article>
       </section>
     </main>
 
