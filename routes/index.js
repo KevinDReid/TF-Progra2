@@ -4,7 +4,7 @@ let data = require('../db/data')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { users:  });
+  res.render('index', { users: ''});
 });
 
 module.exports = router;
