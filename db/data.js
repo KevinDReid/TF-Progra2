@@ -126,7 +126,7 @@ const data = {
             name: 'luis navas',
             userId: 2,
             password: 0000001,
-            email: 'asd@asd.com',
+            email: 'hola@asd.com',
             birthday: '01-01-1000',
             dni: 1111112,
             foto: 'https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo',
@@ -137,7 +137,7 @@ const data = {
             name: 'brian navas',
             userId: 3,
             password: 0000010,
-            email: 'asd@asd.com',
+            email: 'chau@asd.com',
             birthday: '01-01-1000',
             dni: 1111121,
             foto: 'https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY',
@@ -148,7 +148,7 @@ const data = {
             name: 'sebastian pereira',
             userId: 4,
             password: 0000011,
-            email: 'asd@asd.com',
+            email: 'gmail@asd.com',
             birthday: '01-01-1000',
             dni: 1111122,
             foto: 'https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU',
@@ -159,13 +159,35 @@ const data = {
             name: 'silon aubernial',
             userId: 5,
             password: 0000100,
-            email: 'asd@asd.com',
+            email: 'qwerty@asd.com',
             birthday: '01-01-1000',
             dni: 1111211,
             foto: 'https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4',
             postsNumber: 1
         },
     ],
+    // comentarios: [
+    //     {
+    //         comentario: 'Genial!!',
+    //         quienComento: 'Thiago'
+    //     },
+    //     {
+    //         comentario: '¡Espectacular!',
+    //         quienComento: 'Ricardo'
+    //     },
+    //     {
+    //         comentario: 'Wow',
+    //         quienComento: 'Kevin'
+    //     },
+    //     {
+    //         comentario: 'Increible',
+    //         quienComento: 'Fausto'
+    //     },
+    // ]
+
+
+
+
     // buscarUsuario: function(userId){
     //     let resultado = []
     //     for (let i = 0; i < users.length; i++) {
