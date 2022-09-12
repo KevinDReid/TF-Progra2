@@ -1,58 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
 
-<%- include('./partials/head.ejs')%>
-
-<body>
-
+  <body>
     <%- include('./partials/header.ejs')%>
 
     <main>
-        <div class="user-detail container">
-            <section class="top main-content">
-                <img class="profile" src="https://via.placeholder.com/100x100" alt="">
-                <div class="info-usuario">
-                    <p>Nombre de usuario</p> 
-                    <a class="follow" href="">seguir</a>
-                    <ul class="meta">
-                        <li>100 post</li>
-                        <li>200 seguidores</li>
-                        <li>300 seguidos</li>
-                    </ul>
-                </div>
-            </section>
-            <section class="bottom">
-                <article class="post">
-                    <a href="detallePost.html">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="detallePost.html">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="detallePost.html">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="detallePost.html">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="detallePost.html">
-                        <img src="https://via.placeholder.com/200x250" alt="">
-                    </a>
-                </article>
-            </section>
-        </div>
+      <div class="user-detail container">
+        <section class="top main-content">
+          <img class="profile" src="<%= user[0].foto %> " alt="" />
+          <div class="info-usuario">
+            <p><%= user[0].username %></p>
+            <a class="follow" href="">seguir</a>
+            <ul class="meta">
+              <li><%=user[0].postNumber%> post</li>
+              <li><%=user[0].followers%> seguidores</li>
+              <li><%=user[0].following%> seguidos</li>
+            </ul>
+          </div>
+        </section>
+        <section class="bottom">
+          <% for( let i = 0; i < user[0].postNumber; i++ ) { %>
+
+          <article class="post">
+            <a href="/posts/detail/id/<%=img[0].postId%>">
+              <img src="https://picsum.photos/200/250" alt="" />
+            </a>
+          </article>
+          <% } %>
+        </section>
+      </div>
     </main>
 
     <%- include('./partials/footer.ejs')%>
-    
-</body>
-
+  </body>
 </html>
