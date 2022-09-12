@@ -1,11 +1,8 @@
 var express = require('express');
 var router = express.Router();
-
+const postController = require('../controllers/postsController')
 /* GET home page. */
-router.get('/add', function(req, res, next) {
-  res.render('posts', { title: 'Express' });
-});
-router.get('/detail/id/:id', function(req, res, next) {
-    res.render('index', { title: 'Express' });
-  });
+// router.get('/add', )
+// });
+router.get('/detail/id/:id', postController.img);
 module.exports = router;

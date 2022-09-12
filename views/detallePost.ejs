@@ -1,83 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
 
-<%- include('./partials/head.ejs')%>
-
-<body>
-
+  <body>
     <%- include('./partials/header.ejs')%>
 
     <main>
-        <div class="post-detail container">
-            <section class="center main-content post">
-                <div class="info-usuario">
-                    <img src="https://via.placeholder.com/40" alt="">
-                    <p><a href="detalleUsuario.html">Nombre de usuario</a></p>
-                </div>
-                <img class="photo" src="https://via.placeholder.com/500x600" alt="">
-            </section>
-            <section class="right">
-                <h4>Comentarios</h4>
-                <section class="comments">
-                    <form action="" class="comment-form">
-                        <input type="text" class="input" placeholder="Agregar comentario">
-                        <button type="submit">Comentar</button>
-                    </form>
-                    <div>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="detalleUsuario.html">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="detalleUsuario.html">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="detalleUsuario.html">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="detalleUsuario.html">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="detalleUsuario.html">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                        <article class="comment">
-                            <img src="https://via.placeholder.com/40" alt="">
-                            <section class="content">
-                                <a class="user" href="detalleUsuario.html">Nombre</a>
-                                <span class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur temporibus maxime
-                                    voluptas</span>
-                            </section>
-                        </article>
-                    </div>
+      <div class="post-detail container">
+        <section class="center main-content post">
+          <div class="info-usuario">
+            <img class="userImg" src="<%= detail[0].userImg %> " alt="" />
+            <p><a href="detalleUsuario.html"><%=detail[0].username %> </a></p>
+          </div>
+          <img class="photo" src="https://via.placeholder.com/500x600" alt="" />
+        </section>
+        <section class="right">
+          <h4>Comentarios</h4>
+          <section class="comments">
+            <form action="" class="comment-form">
+              <input
+                type="text"
+                class="input"
+                placeholder="Agregar comentario"
+              />
+              <button type="submit">Comentar</button>
+            </form>
+            <% for( let i = 0; i < detail[0].comments.length; i++ ) { %>
+            <div>
+              <article class="comment">
+                <img src="https://via.placeholder.com/40" alt="" />
+                <section class="content">
+                  <a class="user" href="detalleUsuario.html"><%= %> </a>
+                  <span class="text"><%= detail[0].comments[i] %> </span>
                 </section>
-            </section>
-        </div>
+              </article>
+              <% } %>
+            </div>
+          </section>
+        </section>
+      </div>
     </main>
 
     <%- include('./partials/footer.ejs')%>
-</body>
-
+  </body>
 </html>
