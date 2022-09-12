@@ -36,14 +36,14 @@ const data = {
 
         },
         {
-            userId: 8,
+            userId: 3,
             postId: 6,
             likes: 12,
             comments: ['siajdoasjd', 'oiasndinas', 'oiasdnoiasnd', 'lorem ipsum']
 
         },
         {
-            userId: 10,
+            userId: 2,
             postId: 7,
             likes: 12,
             comments: ['siajdoasjd', 'oiasndinas', 'oiasdnoiasnd', 'lorem ipsum']
@@ -57,7 +57,7 @@ const data = {
 
         },
         {
-            userId: 13,
+            userId: 1,
             postId: 9,
             likes: 12,
             comments: ['siajdoasjd', 'oiasndinas', 'oiasdnoiasnd', 'lorem ipsum']
@@ -94,7 +94,7 @@ const data = {
             email: 'asd@asd.com',
             birthday: '01-01-1000',
             dni: 1111111,
-            foto: '',
+            foto: 'https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU',
             postsNumber: 10
         },
         {
@@ -105,7 +105,7 @@ const data = {
             email: 'asd@asd.com',
             birthday: '01-01-1000',
             dni: 1111112,
-            foto: '',
+            foto: 'https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo',
             postsNumber: 5
         },
         {
@@ -116,7 +116,7 @@ const data = {
             email: 'asd@asd.com',
             birthday: '01-01-1000',
             dni: 1111121,
-            foto: '',
+            foto: 'https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY',
             postsNumber: 3
         },
         {
@@ -127,7 +127,7 @@ const data = {
             email: 'asd@asd.com',
             birthday: '01-01-1000',
             dni: 1111122,
-            foto: '',
+            foto: 'https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU',
             postsNumber: 2
         },
         {
@@ -138,8 +138,10 @@ const data = {
             email: 'asd@asd.com',
             birthday: '01-01-1000',
             dni: 1111211,
-            foto: '',
+            foto: 'https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4',
             postsNumber: 1
         },
-    ]
+    ],
+    
 }
+module.exports = data;
