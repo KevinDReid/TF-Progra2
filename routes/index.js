@@ -1,10 +1,7 @@
 var express = require('express');
 var router = express.Router();
-let data = require('../db/data')
-
+let controller = require('../controllers/dataController')
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { users:  });
-});
+router.get('/', controller.index);
 
 module.exports = router;

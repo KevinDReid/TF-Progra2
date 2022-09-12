@@ -48,11 +48,12 @@
 
     <main>
       <section class="center main-content">
+        <% for( let i = 0; i < users.length; i++ ) { %>
         <article class="post">
           <div class="info-usuario">
             <img src="https://via.placeholder.com/40" alt="" />
             <h4>
-              <a href="detalleUsuario.html">Usuario</a>
+              <a href="detalleUsuario.html"><%= posts[i].author %> </a>
             </h4>
           </div>
           <div class="post-body">
@@ -89,6 +90,8 @@
             </ul>
           </div>
         </article>
+
+        <% } %>
         <article class="post">
           <div class="info-usuario">
             <img src="https://via.placeholder.com/40" alt="" />

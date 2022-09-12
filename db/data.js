@@ -87,7 +87,7 @@ const data = {
     ],
     users: [
         {
-            username: 'abc',
+            username: 'jper',
             name: 'juan perez',
             userId: 1,
             password: 0000000,
@@ -98,7 +98,7 @@ const data = {
             postsNumber: 10
         },
         {
-            username: 'def',
+            username: 'luisg',
             name: 'luis gomez',
             userId: 2,
             password: 0000001,
@@ -109,7 +109,7 @@ const data = {
             postsNumber: 5
         },
         {
-            username: 'ghi',
+            username: 'briannav',
             name: 'brian navas',
             userId: 3,
             password: 0000010,
@@ -120,7 +120,7 @@ const data = {
             postsNumber: 3
         },
         {
-            username: 'jkl',
+            username: 'sebper',
             name: 'sebastian pereira',
             userId: 4,
             password: 0000011,
@@ -131,8 +131,8 @@ const data = {
             postsNumber: 2
         },
         {
-            username: 'mno',
-            name: 'simon alvarez',
+            username: 'simalv',
+            name: 'silon aubernial',
             userId: 5,
             password: 0000100,
             email: 'asd@asd.com',
@@ -142,6 +142,17 @@ const data = {
             postsNumber: 1
         },
     ],
-    
+    buscarUsuario: function(userId){
+        let resultado = []
+        for (let i = 0; i < users.length; i++) {
+            const element = users[i].username;
+            if (user[i].userId == userId){
+                resultado.push(element)
+            }
+            
+        }
+        return resultado
+    }
+
 }
 module.exports = data;
