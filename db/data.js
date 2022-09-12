@@ -169,7 +169,7 @@ const data = {
     buscarId : function(id) {
         let resultados = []
         for (let i = 0; i < this.users.length; i++){
-            if (id == this.users[i].id){
+            if (id == this.users[i].userId){
               resultados.push(this.users[i])  
             }
         }
