@@ -23,8 +23,8 @@
           <% for( let i = 0; i < user[0].postNumber; i++ ) { %>
 
           <article class="post">
-            <a href="/posts/detail/id/<%=img[0].postId%>">
-              <img src="<%= img[1].postImg %>" alt="" />
+            <a href="/posts/detail/id/<%=img[i].postId%>">
+              <img src="<%= img[i].postImg %>" alt="" />
             </a>
           </article>
           <% } %>
