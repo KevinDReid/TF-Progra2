@@ -33,21 +33,18 @@
           <div class="post-comentarios">
             <h4>Comentarios</h4>
             <ul>
+              <% for( let a = 0; a < 2; a++ ) { %>
+
               <li>
-                <a href="/users/id/<%= posts[i].userId %>">Usuario</a>
-                <span
-                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi</span
-                >
+                <a href="/users/id/<%= posts[i].userId %>"
+                  ><%= posts[i].commentAuthor[a] %>
+                </a>
+                <span><%=posts[i].comments[a]%></span>
               </li>
+              <% } %>
               <li>
-                <a href="/users/id/<%= posts[i].userId %>">Usuario</a>
-                <span
-                  >Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Commodi</span
-                >
+                <a href="/posts/detail/id/<%= posts[i].postId%>">Ver más...</a>
               </li>
-              <a href="/posts/detail/id/<%= posts[i].postId%>">Ver más...</a>
             </ul>
           </div>
         </article>
