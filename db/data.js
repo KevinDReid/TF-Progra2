@@ -176,8 +176,8 @@ const data = {
             following: 142
         },
     ],
-// <<<<<<< HEAD
-    // comentarios: [
+
+     // comentarios: [
     //     {
     //         comentario: 'Genial!!',
     //         quienComento: 'Thiago'
@@ -195,9 +195,9 @@ const data = {
     //         quienComento: 'Fausto'
     //     },
     // ]
-
-
-
+    
+// <<<<<<< HEAD
+   
 
     // buscarUsuario: function(userId){
     //     let resultado = []
