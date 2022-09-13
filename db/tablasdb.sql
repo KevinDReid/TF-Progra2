@@ -54,7 +54,7 @@ INSERT INTO posteos VALUES (default, default, '', '', default, default);
 INSERT INTO posteos VALUES (default, default, '', '', default, default);
 INSERT INTO posteos VALUES (default, default, '', '', default, default);
 INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
+INSERT INTO posteos VALUES (default, default, '', '', default, default)
 
 
 /* DROP SCHEMA proyectoIntegrador */
