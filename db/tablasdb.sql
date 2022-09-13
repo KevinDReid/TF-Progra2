@@ -45,16 +45,16 @@ INSERT INTO usuarios VALUES (default, 'briang','brian navas','0000010','chau@asd
 INSERT INTO usuarios VALUES (default, 'sebper','sebastian pereira','0000011','gmail@asd.com','01-01-1000','1111122','https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU', default, default);
 INSERT INTO usuarios VALUES (default, 'simalv','silon aubernial','0000100','qwerty@asd.com','01-01-1000','1111211','https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4', default, default);
 
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default);
-INSERT INTO posteos VALUES (default, default, '', '', default, default)
+INSERT INTO posteos VALUES (default, default, '', 'Una masaaa', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'Pizza vegana, me encanta!', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'Que opinan de mi tier list?', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'Dudosa pizzeria, tengan cuidado', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'Tuquito pa la pizza', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'foto del maestro pizzero, miguel, un groso!', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'Paso a paso', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'Pizza Hut a morir', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'La tier list de pizzas definitiva, no acepto discusiones.', default, default);
+INSERT INTO posteos VALUES (default, default, '', 'Miren el quesooo', default, default)
 
 
 /* DROP SCHEMA proyectoIntegrador */
