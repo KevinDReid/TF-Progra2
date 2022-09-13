@@ -10,7 +10,11 @@
         <section class="center main-content post">
           <div class="info-usuario">
             <img class="userImg" src="<%= detail[0].userImg %> " alt="" />
-            <p><a href="/users/id/<%= detail[0].userId %>"><%=detail[0].username %> </a></p>
+            <p>
+              <a href="/users/id/<%= detail[0].userId %>"
+                ><%=detail[0].username %>
+              </a>
+            </p>
           </div>
           <img class="photo" src="<%= detail[0].postImg %>" alt="" />
         </section>
@@ -30,7 +34,9 @@
               <article class="comment">
                 <img src="https://via.placeholder.com/40" alt="" />
                 <section class="content">
-                  <a class="user" href="detalleUsuario.html"><%= %> </a>
+                  <a class="user" href="detalleUsuario.html"
+                    ><%=detail[0].commentAuthor[i] %>
+                  </a>
                   <span class="text"><%= detail[0].comments[i] %> </span>
                 </section>
               </article>

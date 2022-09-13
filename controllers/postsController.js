@@ -11,6 +11,7 @@ const imgController = {
         user: idBuscado,
         img: imgBuscado,
         detail: searchDetail,
+        posts: data.posts,
       });
     } else {
       return res.send("No existe ese id");

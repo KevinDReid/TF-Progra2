@@ -13,7 +13,7 @@
             <img class="userImg" src="<%= posts[i].userImg %> " alt="" />
             <h4>
               <a href="/users/id/<%= posts[i].userId %>"
-                ><%= posts[i].username + [i] %>
+                ><%= posts[i].username %>
               </a>
             </h4>
           </div>
@@ -23,10 +23,13 @@
             </a>
           </div>
           <ul class="post-reacciones">
-            <li>
-              <i class="fa-regular fa-heart"> <%= posts[i].likes %> </i>
+            <li class="likesAndStuff">
+              <i class="fa-regular fa-heart"> </i>
             </li>
-            <li>
+            <li class="likesAndStuff">
+              <p class="likesText"><%= posts[i].likes %></p>
+            </li>
+            <li class="likesAndStuff">
               <i class="fa-regular fa-comment"></i>
             </li>
           </ul>
@@ -36,7 +39,7 @@
               <% for( let a = 0; a < 2; a++ ) { %>
 
               <li>
-                <a href="/users/id/<%= posts[i].userId %>"
+                <a class="indexUsername" href="/users/id/<%= posts[i].userId %>"
                   ><%= posts[i].commentAuthor[a] %>
                 </a>
                 <span><%=posts[i].comments[a]%></span>

@@ -2,13 +2,13 @@ const data = {
   posts: [
     {
       userId: 1,
-      username: "jper",
+      username: "kreid",
       userImg:
         "https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU",
       postId: 1,
       postImg: "/images/pizzadough.jpeg",
       likes: 12,
-      commentAuthor: ["brian_gomez", "jper", "simalv", "luis_navas"],
+      commentAuthor: ["brian_gomez", "kreid", "fmoche", "luis_navas"],
       comments: [
         "thats a nice dough man",
         "oiasndinas",
@@ -23,19 +23,19 @@ const data = {
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
       postId: 2,
       postImg: "/images/pizza1.jpeg",
-      likes: 15,
-      commentAuthor: ["jper", "jper", "luis_navas", "sebper"],
+      likes: "249K",
+      commentAuthor: ["kreid", "kreid", "luis_navas", "tgrimberg"],
       comments: ["imasmf", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
     },
     {
       userId: 1,
-      username: "jper",
+      username: "kreid",
       userImg:
         "https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU",
       postId: 3,
       postImg: "/images/tierlist-1.png",
-      likes: 12,
-      commentAuthor: ["simalv", "simalv", "luis_navas", "brian_gomez"],
+      likes: 6,
+      commentAuthor: ["fmoche", "fmoche", "luis_navas", "brian_gomez"],
       comments: [
         "the most awful tier list I have seen in my life",
         "oiasndinas",
@@ -45,24 +45,24 @@ const data = {
     },
     {
       userId: 5,
-      username: "simalv",
+      username: "fmoche",
       userImg:
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
       postId: 4,
       postImg: "/images/pizza-ugi-s.jpeg",
-      likes: 12,
+      likes: 53,
       commentAuthor: ["luis_navas", "brian_gomez", "luis_navas", "brian_gomez"],
       comments: ["lmao ugis", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
     },
     {
       userId: 4,
-      username: "sebper",
+      username: "tgrimberg",
       userImg:
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
       postId: 5,
       postImg: "/images/pizza-sauce-1.jpeg",
-      likes: 12,
-      commentAuthor: ["luis_navas", "brian_gomez", "sebper", "brian_gomez"],
+      likes: 15,
+      commentAuthor: ["luis_navas", "brian_gomez", "tgrimberg", "brian_gomez"],
       comments: ["nice sauce", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
     },
     {
@@ -72,8 +72,8 @@ const data = {
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
       postId: 6,
       postImg: "/images/dominos.jpeg",
-      likes: 12,
-      commentAuthor: ["sebper", "luis_navas", "brian_gomez", "sebper"],
+      likes: "400K",
+      commentAuthor: ["tgrimberg", "luis_navas", "brian_gomez", "tgrimberg"],
       comments: ["mmmmmm", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
     },
     {
@@ -83,8 +83,8 @@ const data = {
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
       postId: 7,
       postImg: "/images/pizza-sauce-2.webp",
-      likes: 12,
-      commentAuthor: ["sebper", "sebper", "brian_gomez", "simalv"],
+      likes: "1.2M",
+      commentAuthor: ["tgrimberg", "tgrimberg", "brian_gomez", "fmoche"],
       comments: [
         "nanana de locos",
         "oiasndinas",
@@ -94,13 +94,13 @@ const data = {
     },
     {
       userId: 1,
-      username: "jper",
+      username: "kreid",
       userImg:
         "https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU",
       postId: 8,
       postImg: "/images/pizza-hut.jpeg",
-      likes: 12,
-      commentAuthor: ["simalv", "luis_navas", "sebper", "brian_gomez"],
+      likes: 120,
+      commentAuthor: ["fmoche", "luis_navas", "tgrimberg", "brian_gomez"],
       comments: ["siajdoasjd", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
     },
     {
@@ -110,8 +110,8 @@ const data = {
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
       postId: 9,
       postImg: "/images/tierlist-2.png",
-      likes: 12,
-      commentAuthor: ["luis_navas", "simalv", "sebper", "simalv"],
+      likes: "122K",
+      commentAuthor: ["luis_navas", "fmoche", "tgrimberg", "fmoche"],
       comments: [
         "Agreed",
         "W",
@@ -121,24 +121,24 @@ const data = {
     },
     {
       userId: 4,
-      username: "sebper",
+      username: "tgrimberg",
       userImg:
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
       postId: 10,
       postImg: "/images/papa-johns.jpeg",
-      likes: 12,
-      commentAuthor: ["simalv", "simalv", "luis_navas", "sebper"],
+      likes: 135,
+      commentAuthor: ["fmoche", "fmoche", "luis_navas", "tgrimberg"],
       comments: ["siajdoasjd", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
     },
     {
       userId: 5,
-      username: "simalv",
+      username: "fmoche",
       userImg:
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
       postId: 11,
       postImg: "/images/pizza-generica.jpeg",
-      likes: 12,
-      commentAuthor: ["brian_gomez", "simalv", "sebper", "luis_navas"],
+      likes: 163,
+      commentAuthor: ["brian_gomez", "fmoche", "tgrimberg", "luis_navas"],
       comments: ["siajdoasjd", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
     },
     {
@@ -148,14 +148,14 @@ const data = {
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
       postId: 12,
       postImg: "/images/",
-      likes: 12,
-      commentAuthor: ["simalv", "brian_gomez", "luis_navas", "sebper"],
+      likes: "526K",
+      commentAuthor: ["fmoche", "brian_gomez", "luis_navas", "tgrimberg"],
       comments: ["siajdoasjd", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
     },
   ],
   users: [
     {
-      username: "jper",
+      username: "kreid",
       name: "juan perez",
       userId: 1,
       password: 0000000,
@@ -194,7 +194,7 @@ const data = {
       following: 128,
     },
     {
-      username: "sebper",
+      username: "tgrimberg",
       name: "sebastian pereira",
       userId: 4,
       password: 0000011,
@@ -207,7 +207,7 @@ const data = {
       following: 128,
     },
     {
-      username: "simalv",
+      username: "fmoche",
       name: "silon aubernial",
       userId: 5,
       password: 0000100,

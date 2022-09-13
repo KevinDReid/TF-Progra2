@@ -135,10 +135,12 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  height: 45px;
 }
 .post-reacciones li{
   margin-right: 10px;
   font-size: 25px;
+  height: 50px;
 }
 .post-comentarios li {
   margin-bottom: 10px;
@@ -305,4 +307,24 @@ main {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+}
+/* index */
+
+.indexUsername {
+  font-weight: 700;
+  
+}
+.likesAndStuff{
+  display: flex;
+  align-items:center;
+  margin-top: -10px;
+  margin-bottom: 0px;
+
+}
+.likesText {
+  font-size: 20px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 5px;
+  margin-bottom: 0px;
 }
