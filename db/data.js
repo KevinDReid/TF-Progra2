@@ -67,7 +67,7 @@ const data = {
             postId: 7,
             postImg: '/images/pizza-sauce-2.webp',
             likes: 12,
-            comments: ['siajdoasjd', 'oiasndinas', 'oiasdnoiasnd', 'lorem ipsum']
+            comments: ['nanana de locos', 'oiasndinas', 'oiasdnoiasnd', 'lorem ipsum']
 
         },
         {
