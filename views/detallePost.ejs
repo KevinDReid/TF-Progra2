@@ -32,12 +32,14 @@
             <% for( let i = 0; i < detail[0].comments.length; i++ ) { %>
             <div>
               <article class="comment">
-                <img src="https://via.placeholder.com/40" alt="" />
+                <img src="<%=match[0]%>" alt="" />
                 <section class="content">
                   <a class="user" href="detalleUsuario.html"
                     ><%=detail[0].commentAuthor[i] %>
                   </a>
-                  <span class="text"><%= detail[0].comments[i] %> </span>
+                  <span class="text"
+                    ><%= detail[0].comments[i] + match[0] %>
+                  </span>
                 </section>
               </article>
               <% } %>

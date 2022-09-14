@@ -147,7 +147,7 @@ const data = {
       userImg:
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
       postId: 12,
-      postImg: "/images/",
+      postImg: "/images/image0.jpg",
       likes: "526K",
       commentAuthor: ["fmoche", "brian_gomez", "luis_navas", "tgrimberg"],
       comments: ["siajdoasjd", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
@@ -156,7 +156,7 @@ const data = {
   users: [
     {
       username: "kreid",
-      name: "juan perez",
+      name: "kevin reid",
       userId: 1,
       password: 0000000,
       email: "asd@asd.com",
@@ -164,7 +164,7 @@ const data = {
       dni: 1111111,
       foto: "https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU",
       postNumber: 3,
-      followers: 12,
+      followers: "12.3M",
       following: 21,
     },
     {
@@ -195,7 +195,7 @@ const data = {
     },
     {
       username: "tgrimberg",
-      name: "sebastian pereira",
+      name: "thiago grimberg",
       userId: 4,
       password: 0000011,
       email: "gmail@asd.com",
@@ -208,7 +208,7 @@ const data = {
     },
     {
       username: "fmoche",
-      name: "silon aubernial",
+      name: "fausto moche",
       userId: 5,
       password: 0000100,
       email: "qwerty@asd.com",
@@ -281,6 +281,35 @@ const data = {
       }
     }
     return resultados;
+  },
+  matchCommsPh: function (id) {
+    let resultado = [];
+    for (let i = 0; i < data.posts[0].commentAuthor.length; i++) {
+      let element = data.posts[0].commentAuthor[i];
+      switch (id) {
+        case 1:
+          if (element == data.users[0].username) {
+            resultado.push(data.users[0].foto);
+          }
+        case 2:
+          if (element == data.users[0].username) {
+            resultado.push(data.users[1].foto);
+          }
+        case 3:
+          if (element == data.users[0].username) {
+            resultado.push(data.users[2].foto);
+          }
+        case 4:
+          if (element == data.users[0].username) {
+            resultado.push(data.users[3].foto);
+          }
+        case 5:
+          if (element == data.users[0].username) {
+            resultado.push(data.users[4].foto);
+          }
+      }
+    }
+    return resultado;
   },
   // >>>>>>> 354e346a246a949b52a731836e18d154edf9739e
 };
