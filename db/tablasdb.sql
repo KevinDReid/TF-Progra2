@@ -54,7 +54,12 @@ INSERT INTO posteos VALUES (default, default, '', 'foto del maestro pizzero, mig
 INSERT INTO posteos VALUES (default, default, '', 'Paso a paso', default, default);
 INSERT INTO posteos VALUES (default, default, '', 'Pizza Hut a morir', default, default);
 INSERT INTO posteos VALUES (default, default, '', 'La tier list de pizzas definitiva, no acepto discusiones.', default, default);
-INSERT INTO posteos VALUES (default, default, '', 'Miren el quesooo', default, default)
+INSERT INTO posteos VALUES (default, default, '', 'Miren el quesooo', default, default);
 
+INSERT INTO comentarios VALUES (default, default, default, '', default, default);
+INSERT INTO comentarios VALUES (default, default, default, '', default, default);
+INSERT INTO comentarios VALUES (default, default, default, '', default, default);
+INSERT INTO comentarios VALUES (default, default, default, '', default, default);
+INSERT INTO comentarios VALUES (default, default, default, '', default, default)
 
 /* DROP SCHEMA proyectoIntegrador */
