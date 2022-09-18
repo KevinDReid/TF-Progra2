@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
 
-<%- include('./partials/head.ejs')%>
-
-<body>
-    
+  <body>
     <%- include('./partials/header.ejs')%>
 
     <main>
-        <section class="center main-content">
+      <section class="center main-content">
         <h1>Login</h1>
-        <p>Crear el formulario para ingresar al sitio.</p>
-        </section>
+        <form action="/users/myProfile">
+          <div class="editProfile">
+            <div class="editAllLabels">
+              <label class="editLabel">Username:</label>
+              <label class="editLabel">Password:</label>
+            </div>
+            <div class="editAllInputs">
+              <input
+                class="editInput"
+                type="text"
+                name="username"
+                id="username"
+              />
+              <input
+                class="editInput"
+                type="text"
+                name="password"
+                id="password"
+              />
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
 
     <%- include('./partials/footer.ejs')%>
-
-</body>
-
+  </body>
 </html>

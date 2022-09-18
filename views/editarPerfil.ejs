@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
 
-<%- include('./partials/head.ejs')%>
-
-<body>
-
+  <body>
     <%- include('./partials/header.ejs')%>
 
     <main>
-        <section class="center main-content">
+      <section class="center main-content">
         <h1>Editar perfil</h1>
-        <p>Crear el formulario para modificar los datos de perfil de un usuario.</p>
-        </section>
+        <form action="/users/myProfile">
+          <div class="editProfile">
+            <div class="editAllLabels">
+              <label class="editLabel">Username:</label>
+              <label class="editLabel">Password:</label>
+              <label class="editLabel">Email:</label>
+              <label class="editLabel" id="pfpL">Profile picture:</label>
+            </div>
+            <div class="editAllInputs">
+              <input
+                class="editInput"
+                type="text"
+                name="username"
+                id="username"
+                placeholder="luis_navas"
+              />
+              <input
+                class="editInput"
+                type="text"
+                name="password"
+                id="password"
+                placeholder="********"
+              />
+              <input class="editInput" type="email" name="email" id="email" />
+              <input class="editInput" type="file" name="pfp" id="pfp" />
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
 
     <%- include('./partials/footer.ejs')%>
-
-</body>
-
+  </body>
 </html>

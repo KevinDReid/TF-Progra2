@@ -331,3 +331,17 @@ main {
   margin-left: 5px;
   margin-bottom: 0px;
 }
+
+/* Edit profile */
+.editProfile {
+  display: flex;
+  flex-direction: row;
+}
+.editAllLabels, .editAllInputs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+.editLabel {
+  margin-top: 3px;
+}
