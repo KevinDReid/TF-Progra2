@@ -19,6 +19,9 @@ const imgController = {
       return res.send("No existe ese id");
     }
   },
+  add: function (req, res) {
+    return res.render("agregarPost", {});
+  },
 };
 
 module.exports = imgController;
