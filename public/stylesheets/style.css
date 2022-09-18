@@ -3,7 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #fff;
 }
-
+p {
+  color: white
+}
 a {
   color: #00B7FF;
 }
@@ -21,6 +23,7 @@ ul, ol {
 }
 li{
   list-style-type: none;
+  color: white;
 }
 a {
   text-decoration: none;
@@ -58,7 +61,7 @@ header {
   margin-left: 20px;
 }
 .search {
-  background-color: #9da7a7;
+  background-color: #000000ef;
   padding: 10px;
   border-radius: 10px;
   width: 300px;
@@ -183,6 +186,7 @@ main {
 }
 .team li {
   margin-left: 20px;
+  color: #000000;
 }
 
 /* Post detail */
@@ -274,7 +278,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 40px;
-  width: 80%;
+  width: 70%;
 }
 .user-detail .post{
   width: 200px;
