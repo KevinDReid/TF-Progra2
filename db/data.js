@@ -307,25 +307,6 @@ const data = {
     },
   ],
 
-  // comentarios: [
-  //     {
-  //         comentario: 'Genial!!',
-  //         quienComento: 'Thiago'
-  //     },
-  //     {
-  //         comentario: '¡Espectacular!',
-  //         quienComento: 'Ricardo'
-  //     },
-  //     {
-  //         comentario: 'Wow',
-  //         quienComento: 'Kevin'
-  //     },
-  //     {
-  //         comentario: 'Increible',
-  //         quienComento: 'Fausto'
-  //     },
-  // ]
-
   // <<<<<<< HEAD
 
   // buscarUsuario: function(userId){
