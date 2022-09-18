@@ -77,6 +77,9 @@ header {
 .search i {
   color: rgb(248, 242, 242);
 }
+.menu li i {
+  color: black;
+}
 .menu{
   display: flex;
   flex-direction: row;
@@ -355,4 +358,10 @@ main {
 }
 .editLabel {
   margin-top: 3px;
+}
+/* login */
+.stuff {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
