@@ -39,7 +39,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #fff;
+  background-color: #ee6b2e;
 }
 .main-nav {
   display: flex;
@@ -49,14 +49,15 @@ header {
   align-items: center;
 
   padding: 10px 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ee6b2e;
 }
 
 .logo{
   font-size: 18px;
+  margin-left: 20px;
 }
 .search {
-  background-color: #EBEDF0;
+  background-color: #9da7a7;
   padding: 10px;
   border-radius: 10px;
   width: 300px;
@@ -65,12 +66,12 @@ header {
   border: none;
   background-color: transparent;
   height: 26px;
-  color: #888;
+  color: rgb(255, 255, 255);
   width: 90%;
   outline-width: 0;
 }
 .search i {
-  color: #888;
+  color: rgb(248, 242, 242);
 }
 .menu{
   display: flex;
@@ -88,7 +89,7 @@ header {
 
 /* Main */
 main {
-  background-color: #fafafa;
+  background-color: #000000ef;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -103,10 +104,10 @@ main {
 
 /* post */
 .post{
-  background-color: #fff;
+  background-color: #000000ef;
   border: 1px solid #ddd;
   border-radius: 10px;
-  color: #777;
+  color: rgb(255, 255, 255);
   margin-bottom: 20px;
 }
 .post-body img {
@@ -123,6 +124,9 @@ main {
   flex-direction: row;
   justify-content:flex-start;
   align-items: center;
+}
+.fix-user {
+  color: #fff;
 }
 .info-usuario img {
   margin-right: 10px;
@@ -147,7 +151,7 @@ main {
 }
 .post-comentarios li a {
   margin-right: 10px;
-  color: #000;
+  color: rgb(255, 255, 255);
 }
 .post-comentarios h4 {
   margin: 0 0 10px 0;
@@ -168,9 +172,10 @@ main {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #fff;
-  border-top: 1px solid #ddd;
+  background: rgb(243, 166, 22);
+  border-top: 1px solid rgb(243, 166, 22);
   padding: 20px 10px;
+  color: #000000;
 }
 .social li {
   margin-right: 20px;
@@ -216,7 +221,7 @@ main {
 }
 .comment .text {
   font-size: 12px;
-  color: #777;
+  color: rgb(240, 240, 240);
 }
 .comment .content {
   line-height: 1;
@@ -234,7 +239,7 @@ main {
   height: 25px;
   border: none;
   outline-width: 0;
-  color:#777
+  color:rgb(211, 211, 211)
 }
 .comment-form button {
   padding: 5px 0;
