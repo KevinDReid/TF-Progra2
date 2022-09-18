@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head.ejs')%>
 
-<%- include('./partials/head.ejs')%>
-
-<body>
-    
+  <body>
     <%- include('./partials/header.ejs')%>
 
     <main>
-        <section class="center main-content">
-        <h1>Resultados de búsqueda.</h1>
-        <p>Construir la vista.</p>
-        </section>
+      <section class="center main-content">
+        <h1 class="noResults">No se han encontrado resultados de búsqueda.</h1>
+      </section>
     </main>
 
     <%- include('./partials/footer.ejs')%>
-
-</body>
-
+  </body>
 </html>

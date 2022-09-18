@@ -3,11 +3,18 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #fff;
 }
-p {
-  color: white
+p, span {
+  color: white;
+  font-family: 'Roboto Slab', serif;
 }
 a {
   color: #00B7FF;
+}
+h1 {
+  font-family: 'Kanit', sans-serif;
+}
+.fontH {
+  font-family: 'Libre Franklin', sans-serif;
 }
 /* Generics */
 .userImg {
@@ -281,7 +288,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 40px;
-  width: 70%;
+  width: 80%;
 }
 .user-detail .post{
   width: 200px;
@@ -364,4 +371,9 @@ main {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+
+html {
+  background-color: black;
 }
