@@ -4,11 +4,11 @@ USE proyectoIntegrador;
 CREATE TABLE usuarios(
 id_usuario INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(50) NOT NULL,
-email VARCHAR(100),
-usuario VARCHAR(50),
+email VARCHAR(100) UNIQUE,
+usuario VARCHAR(50) UNIQUE,
 contrasenia VARCHAR(50),
 fecha_nacimiento DATE NOT NULL,
-numero_documento INT UNSIGNED NOT NULL, 
+numero_documento INT UNSIGNED NOT NULL UNIQUE, 
 foto VARCHAR (1000) NOT NULL,
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updateAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -54,7 +54,12 @@ INSERT INTO posteos VALUES (default, default, '', 'foto del maestro pizzero, mig
 INSERT INTO posteos VALUES (default, default, '', 'Paso a paso', default, default);
 INSERT INTO posteos VALUES (default, default, '', 'Pizza Hut a morir', default, default);
 INSERT INTO posteos VALUES (default, default, '', 'La tier list de pizzas definitiva, no acepto discusiones.', default, default);
-INSERT INTO posteos VALUES (default, default, '', 'Miren el quesooo', default, default)
+INSERT INTO posteos VALUES (default, default, '', 'Miren el quesooo', default, default);
 
+INSERT INTO comentarios VALUES (default, default, default, '', default, default);
+INSERT INTO comentarios VALUES (default, default, default, '', default, default);
+INSERT INTO comentarios VALUES (default, default, default, '', default, default);
+INSERT INTO comentarios VALUES (default, default, default, '', default, default);
+INSERT INTO comentarios VALUES (default, default, default, '', default, default)
 
 /* DROP SCHEMA proyectoIntegrador */

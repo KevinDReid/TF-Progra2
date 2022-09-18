@@ -6,7 +6,7 @@ const imgController = {
     let idBuscado = data.buscarId(id);
     let imgBuscado = data.searchImg(id);
     let searchDetail = data.searchImgDetail(id);
-    let matchCom = data.matchCommsPh(id);
+    let matchCom = data.match(id);
     if (searchDetail[0] != undefined) {
       return res.render("detallePost", {
         user: idBuscado,

@@ -7,4 +7,5 @@ router.get("/myProfile", usersController.myProfile);
 // router.get('/editProfile', );
 router.get("/id/:id", usersController.userDetail);
 
+router.get("/myProfile/edit", usersController.editProfile);
 module.exports = router;

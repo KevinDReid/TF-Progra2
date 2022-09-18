@@ -13,6 +13,15 @@ const usersController = {
       return res.send("No existe ese id");
     }
   },
+  editProfile: function (req, res) {
+    let id = req.params.id;
+    let idBuscado = users.buscarId(id);
+    let imgBuscado = users.searchImg(id);
+    return res.render("editarPerfil", {
+      user: idBuscado,
+      img: imgBuscado,
+    });
+  },
   myProfile: function (req, res) {
     let id = 2;
     let idBuscado = users.buscarId(id);
