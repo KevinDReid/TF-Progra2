@@ -9,7 +9,7 @@ const data = {
       postImg: "/images/pizzadough.jpeg",
       likes: 12,
       commentAuthor: ["brian_gomez", "kreid", "fmoche", "luis_navas"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
         "https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU",
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
@@ -31,11 +31,11 @@ const data = {
       postImg: "/images/pizza1.jpeg",
       likes: "249K",
       commentAuthor: ["kreid", "kreid", "luis_navas", "tgrimberg"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU",
         "https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU",
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
-        "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU"
+        "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
       ],
 
       comments: ["imasmf", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
@@ -49,7 +49,7 @@ const data = {
       postImg: "/images/tierlist-1.png",
       likes: 6,
       commentAuthor: ["fmoche", "fmoche", "luis_navas", "brian_gomez"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
@@ -71,12 +71,11 @@ const data = {
       postImg: "/images/pizza-ugi-s.jpeg",
       likes: 53,
       commentAuthor: ["luis_navas", "brian_gomez", "luis_navas", "brian_gomez"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
-
       ],
 
       comments: ["lmao ugis", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
@@ -90,7 +89,7 @@ const data = {
       postImg: "/images/pizza-sauce-1.jpeg",
       likes: 15,
       commentAuthor: ["luis_navas", "brian_gomez", "tgrimberg", "brian_gomez"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
@@ -108,7 +107,7 @@ const data = {
       postImg: "/images/dominos.jpeg",
       likes: "400K",
       commentAuthor: ["tgrimberg", "luis_navas", "brian_gomez", "tgrimberg"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
@@ -126,12 +125,11 @@ const data = {
       postImg: "/images/pizza-sauce-2.webp",
       likes: "1.2M",
       commentAuthor: ["tgrimberg", "tgrimberg", "brian_gomez", "fmoche"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
-
       ],
 
       comments: [
@@ -150,12 +148,11 @@ const data = {
       postImg: "/images/pizza-hut.jpeg",
       likes: 120,
       commentAuthor: ["fmoche", "luis_navas", "tgrimberg", "brian_gomez"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
-
       ],
 
       comments: ["siajdoasjd", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
@@ -169,12 +166,11 @@ const data = {
       postImg: "/images/tierlist-2.png",
       likes: "122K",
       commentAuthor: ["luis_navas", "fmoche", "tgrimberg", "fmoche"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
-
       ],
 
       comments: [
@@ -193,7 +189,7 @@ const data = {
       postImg: "/images/papa-johns.jpeg",
       likes: 135,
       commentAuthor: ["fmoche", "fmoche", "luis_navas", "tgrimberg"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
@@ -211,12 +207,11 @@ const data = {
       postImg: "/images/pizza-generica.jpeg",
       likes: 163,
       commentAuthor: ["brian_gomez", "fmoche", "tgrimberg", "luis_navas"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
         "https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU",
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
-
       ],
 
       comments: ["siajdoasjd", "oiasndinas", "oiasdnoiasnd", "lorem ipsum"],
@@ -230,7 +225,7 @@ const data = {
       postImg: "/images/image0.jpg",
       likes: "526K",
       commentAuthor: ["fmoche", "brian_gomez", "luis_navas", "tgrimberg"],
-      authorImg:[
+      authorImg: [
         "https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4",
         "https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY",
         "https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo",
@@ -349,13 +344,40 @@ const data = {
     }
     return resultados;
   },
-  // match: function(id) {
-  //   let detail = this.searchImgDetail(id)
-  //   switch(detail){
-  //     case 'kreid':
 
-  //   }
-  // }
+  match: function (id) {
+    let detail = this.searchImgDetail(id)[0].commentAuthor;
+    let results = [];
+    for (let i = 0; i < detail.length; i++) {
+      // results.push();
+      switch (detail[i]) {
+        case "kreid":
+          // results.push("k");
+          results.push(data.users[0].userId);
+          break;
+        case "luis_navas":
+          // results.push("lu");
+          results.push(data.users[1].userId);
+          break;
+
+        case "brian_gomez":
+          // results.push("br");
+          results.push(data.users[2].userId);
+          break;
+
+        case "tgrimberg":
+          // results.push("t");
+          results.push(data.users[3].userId);
+          break;
+
+        case "fmoche":
+          // results.push("fa");
+          results.push(data.users[4].userId);
+          break;
+      }
+    }
+    return results;
+  },
   // >>>>>>> 354e346a246a949b52a731836e18d154edf9739e
 };
 module.exports = data;
