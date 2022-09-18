@@ -11,7 +11,7 @@
           <div class="info-usuario">
             <img class="userImg" src="<%= detail[0].userImg %> " alt="" />
             <p>
-              <a href="/users/id/<%= detail[0].userId %>"
+              <a class="fix-link" href="/users/id/<%= detail[0].userId %>"
                 ><%=detail[0].username %>
               </a>
             </p>
@@ -38,8 +38,8 @@
                   alt=""
                 />
                 <section class="content">
-                  <a class="user" href="/users/id/<%= match[i] %> "
-                    ><%=detail[0].commentAuthor[i] %>
+                  <a class="fix-link" class="user" href="/users/id/<%= match[i] %> "
+                    ><%=detail[0].commentAuthor[i] %>:
                   </a>
                   <span class="text"><%= detail[0].comments[i]%> </span>
                 </section>
