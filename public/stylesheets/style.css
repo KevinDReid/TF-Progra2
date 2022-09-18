@@ -272,7 +272,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0 40px;
-  width: 70%;
+  width: 80%;
 }
 .user-detail .post{
   width: 200px;
