@@ -29,21 +29,25 @@
               />
               <button type="submit">Comentar</button>
             </form>
-            <% for( let i = 0; i < detail[0].comments.length; i++ ) { %>
+            <% for( let i = 0; i < 4; i++ ) { %>
             <div>
               <article class="comment">
-                <img src="<%=match[0]%>" alt="" />
+                <img
+                  class="commentPfp"
+                  src="<%= detail[0].authorImg[i] %>"
+                  alt=""
+                />
                 <section class="content">
-                  <a class="user" href="detalleUsuario.html"
+                  <a
+                    class="user"
+                    href="/users/id/<%= detail[0].commentAuthor[i] %> "
                     ><%=detail[0].commentAuthor[i] %>
                   </a>
-                  <span class="text"
-                    ><%= detail[0].comments[i] + match[0] %>
-                  </span>
+                  <span class="text"><%= detail[0].comments[i]%> </span>
                 </section>
               </article>
-              <% } %>
             </div>
+            <% } %>
           </section>
         </section>
       </div>

@@ -180,6 +180,9 @@ main {
 }
 
 /* Post detail */
+.commentPfp{
+  width: 50px;
+}
 .post-detail {
   display: flex;
   flex-direction: row;
