@@ -17,9 +17,9 @@ const data = {
       ],
       comments: [
         "thats a nice dough man",
-        "oiasndinas",
-        "oiasdnoiasnd",
-        "lorem ipsum",
+        "Es de masa madre?",
+        "I love making my own dough",
+        "tiene una pinta!",
       ],
     },
     {
