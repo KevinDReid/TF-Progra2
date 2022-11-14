@@ -378,3 +378,7 @@ main {
 html {
   background-color: black;
 }
+
+.navbar-brand {
+  margin-right: 10px;
+}

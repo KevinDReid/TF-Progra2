@@ -3,13 +3,6 @@
     <nav class="main-nav">
       <div class="navbar-left">
         <h2 class="logo"><a class="fontH" href="/">PizzaHub</a></h2>
-        <span>
-        <a class="navbar-brand" href="#">Bienvenido, <%= locals.user.name  %> </a>
-       
-        <a href="/usuario/<%= locals.user.id  %>">
-          <img src="/images/usuarios/<%= locals.user.img  %>" alt="<%= locals.user.name  %>" style="width:50px">
-        </a>
-      </span>
       </div>
       <div class="navbar-center">
         <form action="/results" class="search">
@@ -24,6 +17,13 @@
         </form>
       </div>
       <div class="navbar-right">
+        <span class="navbar-brand">
+          <a href="#">Bienvenido, <%= locals.user.name  %> </a>
+         
+          <a href="/usuario/<%= locals.user.id  %>">
+            <img src="/images/usuarios/<%= locals.user.img  %>" alt="<%= locals.user.name  %>" style="width:50px">
+          </a>
+        </span>
         <ul class="menu">
           <li>
             <a href="/"><i class="fa-solid fa-house"></i></a>
@@ -65,10 +65,10 @@
               <a href="/"><i class="fa-solid fa-house"></i></a>
             </li>
             <li>
-              <a href="/posts/add"><i class="fa-regular fa-square-plus"></i></a>
+              <a href="/login"><i class="fa-regular fa-square-plus"></i></a>
             </li>
             <li>
-              <a href="/users/myProfile"><i class="fa-regular fa-user"></i></a>
+              <a href="/login"><i class="fa-regular fa-user"></i></a>
             </li>
             <li> <a href="/"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> </li>
           </ul>
