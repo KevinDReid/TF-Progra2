@@ -4,9 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const session = require('express-session');
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var logRouter = require('./routes/login');
+var logoutRouter = require('./routes/logout');
 var regiRouter = require('./routes/register');
 var postRouter = require('./routes/posts');
 var resRouter = require('./routes/results');
@@ -23,9 +27,47 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'TF-Progra2',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(function(req, res, next) {
+
+  if (req.session.user != undefined) {
+      res.locals.user = req.session.user;
+  }
+
+  return next();
+});
+
+app.use(function(req, res, next) {
+  if (req.cookies.userId != undefined && req.session.user == undefined) {
+
+      db.User.findByPk(req.cookies.userId)
+      .then((user) => {
+
+        req.session.user = user.dataValues;
+        res.locals.user  = user.dataValues;
+
+        return next();
+        
+      }).catch((err) => {
+        console.log(err);
+        return next();
+      });
+  } else {
+    return next();
+  }
+
+
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', logRouter);
+app.use('/logout', logoutRouter);
 app.use('/register', regiRouter);
 app.use('/results', resRouter);
 app.use('/posts', postRouter);
