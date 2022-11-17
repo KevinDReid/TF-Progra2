@@ -8,12 +8,19 @@
     <main>
       <section class="center main-content">
         <h1>Nuevo Post</h1>
-        <form action="/users/myProfile">
+        <form action="/posts/add" method="post" enctype="multipart/form-data">
           <div class="editProfile">
             <div class="editAllInputs">
-              <input class="editInput" type="file" name="pfp" id="pfp" />
+              <input class="editInput" type="file" name="foto" id="pfp" />
+            </div>
+            <div class="editAllInputs">
+              <label>Descripción</label>
+              <input class="editInput" type="text" name="descripcion" id="pfp" />
             </div>
           </div>
+          <% if (locals.errors) { %>
+            <%= locals.errors.message %> 
+          <% }%>
           <button class="submit" type="submit">Subir</button>
         </form>
       </section>
