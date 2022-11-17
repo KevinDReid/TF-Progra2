@@ -1,4 +1,4 @@
-// const data = require("../db/data")
+const data = require("../db/data")
 const db = require("../database/models");
 const post = db.post;
 const User = db.Usuario;
