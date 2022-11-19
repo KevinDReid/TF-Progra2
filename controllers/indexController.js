@@ -32,6 +32,19 @@ const controller = {
         return res.render("registracion", {});
       },
     store: (req, res) => {
+        let errors = {};
+
+        if (req.body.name == "") {
+            errors.message = "Debe elegir un nombre de usuario";
+            res.locals.errors = errors;
+            return res.render('registerUser');
+
+        }else if(req.body.email == ""){
+            errors.message = "El campo email esta vacio";
+            res.locals.errors = errors;
+            return res.render('registerUser');
+        } else {
+
         let userInfo = req.body;
         // let imgPefil = req.file.filename;
         let user = {
@@ -50,8 +63,7 @@ const controller = {
           .catch((err) => {
             return console.log(err);
           });
-          console.log('eee');
-      },
+      }},
     results: function(req,res) {
         return res.render('resultadoBusqueda',{})
     }
