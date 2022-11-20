@@ -35,13 +35,13 @@ const controller = {
     loginPost:(req,res)=>{
         let info = req.body;
         let filtro={
-            where:[{email:info.email}]
+            where:[{username:info.username}]
         }
         Usuario.findOne(filtro)
         .then((result)=>{
             if(result!=null){
-                let passEncriptada= bycript.compareSync(info.password,result.password);
-                if(passEncriptada){
+                let encriptacion = bycript.compareSync(info.password,result.contrasenia);
+                if(encriptacion){
                     req.session.user = result.dataValues;
 
                     if (info.rememberme != undefined) {
