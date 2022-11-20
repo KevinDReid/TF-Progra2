@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
     let alias = 'Post';
 
     let cols = {
-        id: {
+        id_post: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
@@ -16,12 +16,18 @@ module.exports = function (sequelize, dataTypes) {
         name_img: {
             type: dataTypes.STRING
         },
+        createdAt: {
+            type: dataTypes.DATE,
+          },
+        updateAt: {
+            type: dataTypes.DATE,
+          },
     }
 
     let config = {
         tableName: "posteos",
-        timestamps: true,
-        underscored: false
+        timestamps: false,
+        underscored: true
     }
 
     let Post = sequelize.define(alias, cols, config);

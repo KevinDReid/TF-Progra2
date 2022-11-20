@@ -1,16 +1,20 @@
 const data = require("../db/data")
 const db = require("../database/models");
-const post = db.post;
+const Post = db.Post;
 const User = db.Usuario;
+const Comm = db.Comentario
 const bycript = require("bcryptjs");
 const op = db.Sequelize.Op;
 
 const controller = {
     index: function(req, res){
-        return res.render('index', {
-            users: data.users,
-            posts: data.posts,
-        })
+        console.log(Post)
+        Post.findAll()
+        .then((result) => {
+            console.log(result[2])
+
+            return res.render("index", {posts : result})
+        });
     },
     log: function(req, res){
         return res.render('login', {})

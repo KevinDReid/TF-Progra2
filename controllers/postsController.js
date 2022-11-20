@@ -38,7 +38,8 @@ const imgController = {
         db.Post.create({
           id_usuario: 1,
           descripcion: req.body.descripcion,
-          name_img: req.file.filename
+          name_img: req.file.filename,
+          comments: req.file.Comentario
         })
         .then(()=>res.redirect("/"))
     }
