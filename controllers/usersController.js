@@ -30,13 +30,27 @@ const usersController = {
     });
   },
   myProfile: function (req, res) {
-    let id = 2;
-    let idBuscado = users.buscarId(id);
-    let imgBuscado = users.searchImg(id);
-    let searchImgDetail = users.searchImgDetail();
-    return res.render("miPerfil", {
-      user: user,
-    });
+    let id = 1;
+    let relaciones = {
+      include : [
+          {
+              all : true,
+              nested: true
+          },
+          {association:'comentarios'},
+          {association:'post'}
+
+      ]
+  };
+  user.findByPk(id,relaciones)         
+  .then((result) => {
+    
+    console.log(result.id_usuario)
+      return res.render("miPerfil", {user : result})
+  })
+  .catch((err) =>{
+      return res.redirect("/")
+  });
   },
 };
 module.exports = usersController;

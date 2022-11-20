@@ -51,9 +51,9 @@ const controller = {
                     }
 
                     return res.redirect('/');
-                }else{
-                    return res.send('Contraseña incorrecta');
                 }
+            }else{
+                return res.send('Contraseña incorrecta');
             }
         })
         .catch(error=>console.log(error))
