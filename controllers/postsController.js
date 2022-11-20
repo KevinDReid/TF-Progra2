@@ -1,5 +1,7 @@
 const data = require("../db/data");
 const db = require("../database/models");
+const multer = require('multer');
+const path = require('path');
 
 const imgController = {
   img: function (req, res) {
