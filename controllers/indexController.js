@@ -44,7 +44,7 @@ const controller = {
                 if(encriptacion){
                     req.session.user = result.dataValues;
 
-                    if (info.rememberme != undefined) {
+                    if (info.remember != undefined) {
                         res.cookie('userId', result.dataValues.id, {maxAge: 1000 * 60 * 10})
                     }
 
