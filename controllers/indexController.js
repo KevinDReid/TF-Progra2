@@ -26,7 +26,36 @@ const controller = {
         });
     },
     log: function(req, res){
-        return res.render('login', {})
+        if (req.session.user != undefined) {
+            return res.redirect('/')
+        } else {
+            return res.render('login')
+        }
+    },
+    loginPost:(req,res)=>{
+        let info = req.body;
+        let filtro={
+            where:[{username:info.username}]
+        }
+        Usuario.findOne(filtro)
+        .then((result)=>{
+            if(result!=null){
+                let encriptacion = bycript.compareSync(info.password,result.contrasenia);
+                if(encriptacion){
+                    req.session.user = result.dataValues;
+
+                    if (info.remember != undefined) {
+                        res.cookie('userId', result.dataValues.id_usuario, {maxAge: 1000 * 60 * 10})
+                    }
+
+                    return res.redirect('/');
+                }else{
+                    return res.send('Contraseña incorrecta');
+                }
+            }
+        })
+        .catch(error=>console.log(error))
+       
     },
     logout:(req,res)=>{
         req.session.destroy();
