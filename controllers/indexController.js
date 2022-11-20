@@ -45,7 +45,7 @@ const controller = {
                     req.session.user = result.dataValues;
 
                     if (info.remember != undefined) {
-                        res.cookie('userId', result.dataValues.id, {maxAge: 1000 * 60 * 10})
+                        res.cookie('userId', result.dataValues.id_usuario, {maxAge: 1000 * 60 * 10})
                     }
 
                     return res.redirect('/');
