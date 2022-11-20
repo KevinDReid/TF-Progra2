@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'TF-Progra2',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
 }));
 
 app.use(function(req, res, next) {
@@ -45,7 +45,7 @@ app.use(function(req, res, next) {
 app.use(function(req, res, next) {
   if (req.cookies.userId != undefined && req.session.user == undefined) {
 
-      db.User.findByPk(req.cookies.userId)
+      db.Usuario.findByPk(req.cookies.userId)
       .then((user) => {
 
         req.session.user = user.dataValues;
