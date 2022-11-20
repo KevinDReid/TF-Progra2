@@ -69,12 +69,12 @@ const controller = {
     },
     newComment: (req, res) => {
         let info = req.body;
-        console.log(req.user == undefined)
+        console.log(req.body)
 
         let cum ={
-            // id_post: asd,
+            id_post: info.id_post,
             // id_usuario: res.locals,
-            comentario: info.comment
+            comentario: info.comment,
 
         }
         Comm.create(cum).then((result)=> {
