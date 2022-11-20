@@ -8,7 +8,7 @@ const op = db.Sequelize.Op;
 
 const controller = {
     index: function(req, res){
-        // let commen = Comm.findAll().then((resul) => {return resul })
+
         Post.findAll({
             include: [
                 {
@@ -20,7 +20,7 @@ const controller = {
             ]
         })
         .then((result) => {
-            console.log(result[1].comentarios[0]);
+            console.log(res.locals[0]);
 
             return res.render("index", {posts : result})
         });
@@ -63,11 +63,26 @@ const controller = {
           .catch((err) => {
             return console.log(err);
           });
-          console.log('eee');
       },
     results: function(req,res) {
         return res.render('resultadoBusqueda',{})
+    },
+    newComment: (req, res) => {
+        let info = req.body;
+        console.log(req.user == undefined)
+
+        let cum ={
+            // id_post: asd,
+            // id_usuario: res.locals,
+            comentario: info.comment
+
+        }
+        Comm.create(cum).then((result)=> {
+            return res.redirect('/')
+        })
+
     }
+    
 }
 
 module.exports = controller
