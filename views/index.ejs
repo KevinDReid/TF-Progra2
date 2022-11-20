@@ -52,11 +52,14 @@
                     <span><p><%= posts[i].comentarios[a].comentario %></p></span>
                   </li>
                 <% } %>
-              <% } %> 
-                  <li>
-                    <a href="/posts/detail/id/<%= posts[i].id_post %>">Ver más...</a>
-                  </li>
-            </ul>
+                <% } %> 
+                <li>
+                  <a href="/posts/detail/id/<%= posts[i].id_post %>">Ver más...</a>
+                </li>
+              </ul>
+            <form action="/" method="POST">
+              <input type="text" name="comment" id="<%= posts[i].id_post %> " placeholder="Agrega un comentario..."> <button type="submit"></button>
+            </form>
           </div>
         </article>
 
