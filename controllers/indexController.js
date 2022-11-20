@@ -16,8 +16,35 @@ const controller = {
             return res.render("index", {posts : result})
         });
     },
-    log: function(req, res){
-        return res.render('login', {})
+    log:(req,res)=>{
+        if (req.session.user != undefined) {
+            return res.redirect('/')
+        } else {
+            return res.render('login')
+        }
+    },
+    loginPost:(req,res)=>{
+        let info = req.body;
+        let filtro={
+            where:[{email:info.email}]
+        }
+        User.findOne(filtro)
+        .then((result)=>{
+            if(result!=null){
+                let pass= bycript.compareSync(info.password,result.password);
+                if(pass){
+                    req.session.user = result.dataValues;
+                    if (info.rememberme != undefined) {
+                        res.cookie('userId', result.dataValues.id, {maxAge: 1000 * 60 * 10})
+                    }
+                    return res.redirect('/');
+                }else{
+                    return res.send('Password incorrecta');
+                }
+            }
+        })
+        .catch(error=>console.log(error))
+       
     },
     logout:(req,res)=>{
         req.session.destroy();
@@ -36,6 +63,19 @@ const controller = {
         return res.render("registracion", {});
       },
     store: (req, res) => {
+        let errors = {};
+
+        if (req.body.name == "") {
+            errors.message = "Debe elegir un nombre de usuario";
+            res.locals.errors = errors;
+            return res.render('registerUser');
+
+        }else if(req.body.email == ""){
+            errors.message = "El campo email esta vacio";
+            res.locals.errors = errors;
+            return res.render('registerUser');
+        } else {
+
         let userInfo = req.body;
         // let imgPefil = req.file.filename;
         let user = {
@@ -54,8 +94,7 @@ const controller = {
           .catch((err) => {
             return console.log(err);
           });
-          console.log('eee');
-      },
+      }},
     results: function(req,res) {
         return res.render('resultadoBusqueda',{})
     }
