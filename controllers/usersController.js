@@ -1,17 +1,24 @@
 const users = require("../db/data");
+const db = require('../database/models');
+const user = db.Usuario
 const usersController = {
   userDetail: function (req, res) {
     let id = req.params.id;
-    let idBuscado = users.buscarId(id);
-    let imgBuscado = users.searchImg(id);
-    if (idBuscado[0] != undefined) {
-      return res.render("detalleUsuario", {
-        user: idBuscado,
-        img: imgBuscado,
-      });
-    } else {
-      return res.send("No existe ese id");
-    }
+    db.Post.findAll({
+      include: {
+        all: true,
+        nested: true
+      },
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(post => {
+     //   res.send(post)
+     res.render("detalleUsuario", {
+      post: post
+     })
+    })
   },
   editProfile: function (req, res) {
     let id = req.params.id;
@@ -28,9 +35,7 @@ const usersController = {
     let imgBuscado = users.searchImg(id);
     let searchImgDetail = users.searchImgDetail();
     return res.render("miPerfil", {
-      user: idBuscado,
-      img: imgBuscado,
-      imgBuscado: searchImgDetail,
+      user: user,
     });
   },
 };
