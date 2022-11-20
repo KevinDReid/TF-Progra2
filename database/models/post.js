@@ -16,17 +16,15 @@ module.exports = function (sequelize, dataTypes) {
         name_img: {
             type: dataTypes.STRING
         },
-        createdAt: {
-            type: dataTypes.DATE,
-          },
-        updateAt: {
-            type: dataTypes.DATE,
-          },
+        likes_number: {
+            type: dataTypes.INTEGER
+        },
+
     }
 
     let config = {
         tableName: "posteos",
-        timestamps: false,
+        timestamps: true,
         underscored: true
     }
 

@@ -28,22 +28,27 @@ module.exports = function (sequelize, dataTypes) {
         foto:{
             type: dataTypes.STRING
         },
-        createdAt: {
-            type: dataTypes.DATE,
-          },
-        updateAt: {
-            type: dataTypes.DATE,
-          },
+
     }
 
     let config = {
         tableName: "usuarios",
-        timestamps: false,
+        timestamps: true,
         underscored: true
     }
 
     let Usuario = sequelize.define(alias, cols, config);
-    
+    Usuario.associate = function (models) {
+        Usuario.hasMany(models.Post, {
+            as: "post",
+            foreignKey: "id_usuario"
+        }),
+        Usuario.hasMany(models.Comentario, {
+            as: "comentarios",
+            foreignKey: "id_usuario"
+        }) 
+    }
+
     return Usuario;
 
 }

@@ -8,18 +8,23 @@
     <main>
       <section class="center main-content">
         <% for( let i = 0; i < posts.length; i++ ) { %>
-        <article class="post">
+          <article class="post">
+          <% if(posts[i].id_usuario == posts[i].usuario.id_usuario) {%> 
           <div class="info-usuario">
-            <img class="userImg" src="imagen del user" alt="" />
-            <h4>
-              <a class="fix-link" href="/users/id/<%= posts[i].id_usuario %>"> aca va el nombre de usuario
-              </a>
-            </h4>
+            <img class="userImg" src="<%= posts[i].usuario.foto %> " alt="" />            
+                <h4>
+                  <a class="fix-link" href="/users/id/<%= posts[i].id_usuario %>"> <%= posts[i].usuario.usuario %> 
+                  </a>
+                </h4>
+                <% } %>
           </div>
           <div class="post-body">
             <a href="/posts/detail/id/<%= posts[i].id_post %>">
               <img src="<%= posts[i].name_img %>" alt="" />
             </a>
+          </div>
+          <div class="descripcion">
+            <p><%=posts[i].descripcion%></p>
           </div>
           <ul class="post-reacciones">
             <li class="likesAndStuff">
@@ -32,25 +37,25 @@
               <i class="fa-regular fa-comment"></i>
             </li>
           </ul>
-          <div class="descripcion">
-            <p><%=posts[i].descripcion%></p>
-          </div>
           <div class="post-comentarios">
             <h4>Comentarios</h4>
             <ul>
-              <% for( let a = 0; a < 2; a++ ) { %>
+              <% for( let a = 0; a < posts[i].comentarios.length; a++ ) { %>
+                <% if (posts[i].id_post == posts[i].comentarios[a].id_post ) {%> 
+                  <% if (a >= 2) {break} %> 
 
-              <li>
-                <a class="indexUsername" href="/users/id/<%= posts[i].id_usuario %>"
-                  >
-                  aca va el nombre de usuario
-                </a>
-                <span></span>
-              </li>
-              <% } %>
-              <li>
-                <a href="/posts/detail/id/<%= posts[i].id_post %>">Ver más...</a>
-              </li>
+                  <li>
+                    <a class="indexUsername" href="/users/id/<%= posts[i].comentarios[a].id_usuario %>"
+                      >
+                      aca va el nombre de usuario
+                    </a>
+                    <span><p><%= posts[i].comentarios[a].comentario %></p></span>
+                  </li>
+                <% } %>
+              <% } %> 
+                  <li>
+                    <a href="/posts/detail/id/<%= posts[i].id_post %>">Ver más...</a>
+                  </li>
             </ul>
           </div>
         </article>

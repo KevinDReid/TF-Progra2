@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
     let alias = 'Comentario';
 
     let cols = {
-        id: {
+        id_comentario: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
@@ -16,12 +16,13 @@ module.exports = function (sequelize, dataTypes) {
         comentario: {
             type: dataTypes.STRING
         },
+
     }
 
     let config = {
         tableName: "comentarios",
         timestamps: true,
-        underscored: false
+        underscored: true
     }
 
     let Comentario = sequelize.define(alias, cols, config);
