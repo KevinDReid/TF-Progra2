@@ -32,33 +32,39 @@ const controller = {
             return res.render('login')
         }
     },
-    loginPost:(req,res)=>{
+    loginPost: (req, res) => {
         let info = req.body;
-        let filtro={
-            where:[{username:info.username}]
-        }
-        Usuario.findOne(filtro)
-        .then((result)=>{
-            if(result!=null){
-                let encriptacion = bycript.compareSync(info.password,result.contrasenia);
-                if(encriptacion){
-                    req.session.user = result.dataValues;
-
-                    console.log(req.session.user);
-
-                    if (info.remember != undefined) {
-                        res.cookie('userId', result.dataValues.id_usuario, {maxAge: 1000 * 60 * 10})
-                    }
-
-                    return res.redirect('/');
+        console.log('EAFSFSASF');
+        let filtro = {
+          where: [{email: info.email }],
+        };
+        User.findOne(filtro)
+          .then((result) => {
+            if (result != null) {
+              let passEncriptada = async function () {
+               return await bycript.compareSync(
+                info.password,
+                result.password
+                );
+              }
+                if (passEncriptada) {
+                  req.session.user = result.dataValues;
+                  console.log(result.dataValues);
+    
+                if (info.rememberme != undefined) {
+                  res.cookie("userId", result.dataValues.id, {
+                    maxAge: 1000 * 60 * 10,
+                  });
                 }
-            }else{
-                return res.send('Contraseña incorrecta');
+    
+                return res.redirect("/");
+              } else {
+                return res.send("La clave no coincide");
+              }
             }
-        })
-        .catch(error=>console.log(error))
-       
-    },
+          })
+          .catch((error) => console.log(error));
+      },
     logout:(req,res)=>{
         req.session.destroy();
 
@@ -66,11 +72,7 @@ const controller = {
 
         res.locals.user = undefined;
 
-        return res.render('login');
-    },
-    reg: function(req, res){
-        return res.render('registracion', {
-        })
+        return res.render('login', {});
     },
     reg: (req, res) => {
         return res.render("registracion", {});
@@ -99,18 +101,18 @@ const controller = {
         return res.render('resultadoBusqueda',{})
     },
     newComment: (req, res) => {
-        let info = req.body;
-        console.log(req.body)
+        // let info = req.body;
+        // console.log(req.body)
 
-        let cum ={
-            id_post: info.id_post,
-            // id_usuario: res.locals,
-            comentario: info.comment,
+        // let cum ={
+        //     id_post: info.id_post,
+        //     // id_usuario: res.locals,
+        //     comentario: info.comment,
 
-        }
-        Comm.create(cum).then((result)=> {
+        // }
+        // Comm.create(cum).then((result)=> {
             return res.redirect('/')
-        })
+        // })
 
     }
     

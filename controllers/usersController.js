@@ -45,7 +45,7 @@ const usersController = {
   user.findByPk(id,relaciones)         
   .then((result) => {
     
-    console.log(result.id_usuario)
+    console.log(result.post)
       return res.render("miPerfil", {user : result})
   })
   .catch((err) =>{

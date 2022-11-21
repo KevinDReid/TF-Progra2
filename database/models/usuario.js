@@ -25,6 +25,9 @@ module.exports = function (sequelize, dataTypes) {
         numero_documento: {
             type: dataTypes.INTEGER
         },
+        remember_token: {
+            type: dataTypes.STRING,
+          },
         foto:{
             type: dataTypes.STRING
         },
