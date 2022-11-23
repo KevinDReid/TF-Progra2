@@ -32,38 +32,51 @@ const controller = {
         }
     },
     loginPost: (req, res) => {
-        let info = req.body;
-        let filtro = {
-          where: [{email: info.email }],
-        };
-        User.findOne(filtro)
-          .then((result) => {
-            if (result != null) {
-
-              let passEncriptada = bycript.compareSync(
-                info.password,
-                result.contrasenia
-                );
-                console.log(passEncriptada)
-              
-                if (passEncriptada) {
-                  req.session.user = result.dataValues;
-
+        let errors = {};
+        if (req.body.email = "") {
+            errors.message = "Debe ingresar un email";
+            res.locals.errors = errors;
+            return res.render('login');
+        
+        }else if(req.body.password == ""){
+            errors.message = "Debe ingresar una contraseña";
+            res.locals.errors = errors;
+            return res.render('login');
+        } else {
+            let info = req.body;
+            let filtro = {
+              where: [{email: info.email }],
+            };
+            User.findOne(filtro)
+              .then((result) => {
+                if (result != null) {
     
-                if (info.remember != undefined) {
-                  res.cookie("userId", result.dataValues.id_usuario, {
-                    maxAge: 1000 * 60 * 10,
-                  });
+                  let passEncriptada = bycript.compareSync(
+                    info.password,
+                    result.contrasenia
+                    );
+                    console.log(passEncriptada)
+                  
+                    if (passEncriptada) {
+                      req.session.user = result.dataValues;
+    
+        
+                    if (info.remember != undefined) {
+                      res.cookie("userId", result.dataValues.id_usuario, {
+                        maxAge: 1000 * 60 * 10,
+                      });
+                    }
+        
+                    return res.redirect("/");
+                  } else {
+                    return res.send("La clave no coincide");
+                  }
                 }
-    
-                return res.redirect("/");
-              } else {
-                return res.send("La clave no coincide");
-              }
-            }
-          })
-          .catch((error) => console.log(error));
-      },
+              })
+              .catch((error) => console.log(error));
+          }
+        },
+
     logout:(req,res)=>{
         req.session.destroy();
 
@@ -73,24 +86,54 @@ const controller = {
 
         return res.render('login', {});
     },
+    
     reg: (req, res) => {
         return res.render("registracion", {});
       },
     store: (req, res) => {
         let errors = {};
 
-        if (req.body.email == "") {
-            errors.message = "Tiene que ingresar un email";
+        if (req.body.foto == "") {
+            errors.message = "Debe ingresar una foto de perfil";
             res.locals.errors = errors;
             return res.render('registracion');
-        
-        }else if(req.body.password < 3){
-            errors.message = "La contraseña debe tener más de 3 caracteres";
+            
+        }else if(req.body.firstName == ""){
+            errors.message = "Debe ingresar un nombre";
+            res.locals.errors = errors;
+            return res.render('registracion');
+
+        }else if(req.body.lastName == ""){
+            errors.message = "Debe ingresar un apellido";
+            res.locals.errors = errors;
+            return res.render('registracion');
+
+        }else if(req.body.username == ""){
+            errors.message = "Debe ingresar un username";
             res.locals.errors = errors;
             return res.render('registracion');
 
         }else if(req.body.password == ""){
             errors.message = "Debe ingresar una contraseña";
+            res.locals.errors = errors;
+            return res.render('registracion');
+
+        }else if(req.body.password < 3){
+            errors.message = "La contraseña debe tener mas de 3 caracteres";
+            res.locals.errors = errors;
+            return res.render('registracion');
+
+        }else if(req.body.email == ""){
+            errors.message = "Debe ingresar un email";
+            res.locals.errors = errors;
+            return res.render('registracion');
+
+        }else if(req.body.date == ""){
+            errors.message = "Debe ingresar una fecha de nacimiento";
+            res.locals.errors = errors;
+            return res.render('registracion');
+        }else if(req.body.dni == ""){
+            errors.message = "Debe ingresar un DNI";
             res.locals.errors = errors;
             return res.render('registracion');
         } else {
