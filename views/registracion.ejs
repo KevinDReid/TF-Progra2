@@ -8,7 +8,12 @@
     <main>
       <section class="center main-content">
         <h1>Registro</h1>
-        <form  class="formRe" action="/register" method="POST">
+        <form  class="formRe" action="/register/registrar" method="POST" enctype="multipart/form-data">
+          <div>
+            <% if(locals.errors){%>
+              <%= locals.errors.message%> <br> <br>
+            <% }%>
+          </div>
           <div >
             <label for="foto">Introduzca su foto de perfil:</label>
             <input class="imgperfil" type="file" name="foto" id="pfp" placeholder="Introduzca su foto de perfil"/>
@@ -16,10 +21,6 @@
           <div>
               <label for="firstName">Nombre:</label>
               <input type="texto" name="firstName"  placeholder="Introduzca su nombre">
-          </div>
-          <div>
-              <label for="lastName">Apellido:</label>
-              <input type="texto" name="lastName"  placeholder="Introduzca su apellido">
           </div>
           <div>
             <label for="username">Username:</label>

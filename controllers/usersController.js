@@ -30,7 +30,7 @@ const usersController = {
     });
   },
   myProfile: function (req, res) {
-    let id = 41;
+    let id = req.session.user.id_usuario;
     let relaciones = {
       include : [
           {
@@ -53,5 +53,8 @@ const usersController = {
       return res.redirect("/users/myProfile")
   });
   },
+  
 };
+
+
 module.exports = usersController;

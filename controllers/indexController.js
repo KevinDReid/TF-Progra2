@@ -77,42 +77,93 @@ const controller = {
         return res.render("registracion", {});
       },
     store: (req, res) => {
+      
         let errors = {};
 
-        if (req.body.email == "") {
-            errors.message = "Tiene que ingresar un email";
+        if (req.file == undefined) {
+          errors.message = "Tiene que ingresar una foto";
+          res.locals.errors = errors;
+          return res.render('registracion');
+      
+        }
+        
+        else if (req.body.firstName == "") {
+            errors.message = "Tiene que ingresar su nombre";
             res.locals.errors = errors;
             return res.render('registracion');
+
+        }
         
-        }else if(req.body.password < 3){
+        else if (req.body.username == "") {
+              errors.message = "Tiene que ingresar un usuario";
+              res.locals.errors = errors;
+              return res.render('registracion');
+        
+        }
+         
+        else if(req.body.password == ""){
+          errors.message = "Debe ingresar una contraseña";
+          res.locals.errors = errors;
+          return res.render('registracion');
+        } 
+
+        else if(req.body.password.length < 3){
             errors.message = "La contraseña debe tener más de 3 caracteres";
             res.locals.errors = errors;
             return res.render('registracion');
 
-        }else if(req.body.password == ""){
-            errors.message = "Debe ingresar una contraseña";
-            res.locals.errors = errors;
-            return res.render('registracion');
-        } else {
+        }
+       
 
-        let userInfo = req.body;
-        let user = {
-          nombre: userInfo.firstName + ' ' + userInfo.lastName,
-          email: userInfo.email,
-          usuario: userInfo.username,
-          contrasenia: bycript.hashSync(userInfo.password, 10),
-          fecha_nacimiento: userInfo.date,
-          numero_documento: userInfo.dni,
-          foto: userInfo.foto
-        };
-        User.create(user).then((result) => {
-            return res.redirect("/login/");
-          })
-          .catch((err) => {
-            return console.log(err);
-          });
-        } 
+        else if (req.body.email == "") {
+          errors.message = "Tiene que ingresar su email";
+          res.locals.errors = errors;
+          return res.render('registracion');
+    
+        }
+
+        else if (req.body.date == "") {
+          errors.message = "Tiene que ingresar su fecha de nacimiento";
+          res.locals.errors = errors;
+          return res.render('registracion');
+    
+        }
+
+        else if (req.body.dni == "") {
+          errors.message = "Tiene que ingresar su numero de documento";
+          res.locals.errors = errors;
+          return res.render('registracion');
+    
+        }
+
+        else if (req.body.dni.length != 8) {
+          errors.message = "Tiene que tener 8 numeros";
+          res.locals.errors = errors;
+          return res.render('registracion');
+    
+        }
+        
+        else {
+
+            let userInfo = req.body;
+            let user = {
+              nombre: userInfo.firstName + ' ' + userInfo.lastName,
+              email: userInfo.email,
+              usuario: userInfo.username,
+              contrasenia: bycript.hashSync(userInfo.password, 10),
+              fecha_nacimiento: userInfo.date,
+              numero_documento: userInfo.dni,
+              foto: req.file.filename
+            };
+            User.create(user).then((result) => {
+                return res.redirect("/login/");
+              })
+            .catch((err) => {
+              return console.log(err);
+            });
+        }
       },
+      
     results: function(req,res) {
         return res.render('resultadoBusqueda',{})
     },

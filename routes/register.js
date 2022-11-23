@@ -7,7 +7,7 @@ let path = require('path');
 
 let storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, path.join(__dirname, '../public/images/users/'));
+        cb(null, path.join(__dirname, '../public/images/usuarios/'));
     },
     filename: function(req, file, cb) {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
@@ -17,7 +17,8 @@ let storage = multer.diskStorage({
 
 let upload = multer({storage: storage});
 
-router.get('/', indexController.reg);
-router.post("/", upload.single('foto'), indexController.store);
+router.get('/registro', indexController.reg);
+router.post("/registrar",upload.single('foto'), indexController.store)
+//router.post("/", upload.single('foto'), indexController.store);
 
 module.exports = router;
