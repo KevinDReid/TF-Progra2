@@ -23,7 +23,7 @@ module.exports = function (sequelize, dataTypes) {
     }
 
     let config = {
-        tableName: "posteos",
+        tableName: "post",
         timestamps: true,
         underscored: true
     }

@@ -13,7 +13,7 @@ CREATE TABLE `comentarios`  (
   PRIMARY KEY (`id_comentario`) USING BTREE,
   INDEX `id_post`(`id_post` ASC) USING BTREE,
   INDEX `id_usuario`(`id_usuario` ASC) USING BTREE,
-  CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `posteos` (`id_post`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `post` (`id_post`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 62 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
@@ -25,8 +25,8 @@ INSERT INTO `comentarios` VALUES (4, 1, 2, 'tiene una pinta!\"', '2022-11-20 12:
 INSERT INTO `comentarios` VALUES (5, 2, 2, 'pruebaa', '2022-11-20 16:25:07', '2022-11-20 16:25:07');
 
 
-DROP TABLE IF EXISTS `posteos`;
-CREATE TABLE `posteos`  (
+DROP TABLE IF EXISTS `post`;
+CREATE TABLE `post`  (
   `id_post` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_usuario` int UNSIGNED NULL DEFAULT NULL,
   `name_img` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -36,16 +36,16 @@ CREATE TABLE `posteos`  (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_post`) USING BTREE,
   INDEX `id_usuario`(`id_usuario` ASC) USING BTREE,
-  CONSTRAINT `posteos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  CONSTRAINT `post_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 
-INSERT INTO `posteos` VALUES (1, 1, 'pizzadough.jpeg', 'Una masaaa', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:29');
-INSERT INTO `posteos` VALUES (2, 2, 'pizza1.jpeg', 'Pizza vegana, me encanta!', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:32');
-INSERT INTO `posteos` VALUES (3, 3, 'tierlist-1.png', 'Que opinan de mi tier list?', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:34');
-INSERT INTO `posteos` VALUES (5, 5, 'pizza-sauce-1.jpeg', 'Tuquito pa la pizza', 0, '2022-11-06 17:06:37', '2022-11-20 19:25:35');
-INSERT INTO `posteos` VALUES (12, 1, 'foto-1668983269312.jpg', 'asdasdas', 0, '2022-11-20 19:27:49', '2022-11-20 19:27:49');
-INSERT INTO `posteos` VALUES (13, 1, 'foto-1668989561781.png', 'HOLA TEST', 0, '2022-11-20 21:12:41', '2022-11-20 21:12:41');
+INSERT INTO `post` VALUES (1, 1, 'pizzadough.jpeg', 'Una masaaa', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:29');
+INSERT INTO `post` VALUES (2, 2, 'pizza1.jpeg', 'Pizza vegana, me encanta!', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:32');
+INSERT INTO `post` VALUES (3, 3, 'tierlist-1.png', 'Que opinan de mi tier list?', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:34');
+INSERT INTO `post` VALUES (5, 5, 'pizza-sauce-1.jpeg', 'Tuquito pa la pizza', 0, '2022-11-06 17:06:37', '2022-11-20 19:25:35');
+INSERT INTO `post` VALUES (12, 1, 'foto-1668983269312.jpg', 'asdasdas', 0, '2022-11-20 19:27:49', '2022-11-20 19:27:49');
+INSERT INTO `post` VALUES (13, 1, 'foto-1668989561781.png', 'HOLA TEST', 0, '2022-11-20 21:12:41', '2022-11-20 21:12:41');
 
 
 DROP TABLE IF EXISTS `usuarios`;
