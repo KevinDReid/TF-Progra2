@@ -91,6 +91,12 @@ const controller = {
           //img: imgPefil,
         };
         User.create(user).then((result) => {
+          db.Post.create({
+            id_usuario: 1,
+            descripcion: req.body.descripcion,
+            name_img: req.file.filename,
+            comments: req.file.Comentario
+          })
             return res.redirect("/login/");
           })
           .catch((err) => {
