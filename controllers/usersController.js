@@ -30,7 +30,7 @@ const usersController = {
     });
   },
   myProfile: function (req, res) {
-    let id = 1;
+    let id = 41;
     let relaciones = {
       include : [
           {
@@ -45,11 +45,12 @@ const usersController = {
   user.findByPk(id,relaciones)         
   .then((result) => {
     
-    console.log(result.post)
+    console.log(result)
       return res.render("miPerfil", {user : result})
   })
   .catch((err) =>{
-      return res.redirect("/")
+    console.log(err)
+      return res.redirect("/users/myProfile")
   });
   },
 };

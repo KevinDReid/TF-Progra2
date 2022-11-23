@@ -53,7 +53,7 @@ CREATE TABLE `usuarios`  (
   `id_usuario` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `contrasenia` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `contrasenia` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `fecha_nacimiento` date NOT NULL,
   `numero_documento` int UNSIGNED NOT NULL,

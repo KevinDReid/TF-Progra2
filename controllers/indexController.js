@@ -8,7 +8,6 @@ const op = db.Sequelize.Op;
 
 const controller = {
     index: function(req, res){
-
         Post.findAll({
             include: [
                 {
@@ -17,10 +16,10 @@ const controller = {
                 {
                     association: 'comentarios'
                 }
-            ]
+            ],
+            order: [['created_at', 'DESC']]
         })
         .then((result) => {
-            console.log(res.locals[0]);
 
             return res.render("index", {posts : result})
         });
@@ -34,25 +33,25 @@ const controller = {
     },
     loginPost: (req, res) => {
         let info = req.body;
-        console.log('EAFSFSASF');
         let filtro = {
           where: [{email: info.email }],
         };
         User.findOne(filtro)
           .then((result) => {
             if (result != null) {
-              let passEncriptada = async function () {
-               return await bycript.compareSync(
+
+              let passEncriptada = bycript.compareSync(
                 info.password,
-                result.password
+                result.contrasenia
                 );
-              }
+                console.log(passEncriptada)
+              
                 if (passEncriptada) {
                   req.session.user = result.dataValues;
-                  console.log(result.dataValues);
+
     
                 if (info.remember != undefined) {
-                  res.cookie("userId", result.dataValues.id, {
+                  res.cookie("userId", result.dataValues.id_usuario, {
                     maxAge: 1000 * 60 * 10,
                   });
                 }
@@ -87,10 +86,10 @@ const controller = {
           contrasenia: bycript.hashSync(userInfo.password, 10),
           fecha_nacimiento: userInfo.date,
           numero_documento: userInfo.dni,
-          //name_img: req.file.filename
+          foto: userInfo.foto
           //img: imgPefil,
         };
-        User.create(user).then((result) => {
+        User.create(user).then(() => {
             return res.redirect("/login/");
           })
           .catch((err) => {
