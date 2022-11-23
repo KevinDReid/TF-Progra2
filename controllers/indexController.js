@@ -8,7 +8,6 @@ const op = db.Sequelize.Op;
 
 const controller = {
     index: function(req, res){
-
         Post.findAll({
             include: [
                 {
@@ -17,10 +16,10 @@ const controller = {
                 {
                     association: 'comentarios'
                 }
-            ]
+            ],
+            order: [['created_at', 'DESC']]
         })
         .then((result) => {
-            console.log(res.locals[0]);
 
             return res.render("index", {posts : result})
         });
@@ -34,25 +33,25 @@ const controller = {
     },
     loginPost: (req, res) => {
         let info = req.body;
-        console.log('EAFSFSASF');
         let filtro = {
           where: [{email: info.email }],
         };
         User.findOne(filtro)
           .then((result) => {
             if (result != null) {
-              let passEncriptada = async function () {
-               return await bycript.compareSync(
+
+              let passEncriptada = bycript.compareSync(
                 info.password,
-                result.password
+                result.contrasenia
                 );
-              }
+                console.log(passEncriptada)
+              
                 if (passEncriptada) {
                   req.session.user = result.dataValues;
-                  console.log(result.dataValues);
+
     
                 if (info.remember != undefined) {
-                  res.cookie("userId", result.dataValues.id, {
+                  res.cookie("userId", result.dataValues.id_usuario, {
                     maxAge: 1000 * 60 * 10,
                   });
                 }
@@ -78,8 +77,25 @@ const controller = {
         return res.render("registracion", {});
       },
     store: (req, res) => {
+        let errors = {};
+
+        if (req.body.email == "") {
+            errors.message = "Tiene que ingresar un email";
+            res.locals.errors = errors;
+            return res.render('registracion');
+        
+        }else if(req.body.password < 3){
+            errors.message = "La contraseña debe tener más de 3 caracteres";
+            res.locals.errors = errors;
+            return res.render('registracion');
+
+        }else if(req.body.password == ""){
+            errors.message = "Debe ingresar una contraseña";
+            res.locals.errors = errors;
+            return res.render('registracion');
+        } else {
+
         let userInfo = req.body;
-        //let imgPefil = req.file.filename;
         let user = {
           nombre: userInfo.firstName + ' ' + userInfo.lastName,
           email: userInfo.email,
@@ -87,21 +103,15 @@ const controller = {
           contrasenia: bycript.hashSync(userInfo.password, 10),
           fecha_nacimiento: userInfo.date,
           numero_documento: userInfo.dni,
-          //name_img: req.file.filename
-          //img: imgPefil,
+          foto: userInfo.foto
         };
         User.create(user).then((result) => {
-          db.Post.create({
-            id_usuario: 1,
-            descripcion: req.body.descripcion,
-            name_img: req.file.filename,
-            comments: req.file.Comentario
-          })
             return res.redirect("/login/");
           })
           .catch((err) => {
             return console.log(err);
           });
+        } 
       },
     results: function(req,res) {
         return res.render('resultadoBusqueda',{})

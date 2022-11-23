@@ -1,4 +1,4 @@
-<% if (locals.usuario != undefined) { %>
+<% if (locals.user != undefined) { %>
   <header class="main-header">
     <nav class="main-nav">
       <div class="navbar-left">
@@ -18,10 +18,10 @@
       </div>
       <div class="navbar-right">
         <span class="navbar-brand">
-          <a href="#">Bienvenido, <%= locals.user.name  %> </a>
+          <a href="#">Bienvenido, <%= locals.user.nombre  %> </a>
          
-          <a href="/usuario/<%= locals.user.id  %>">
-            <img src="/images/usuarios/<%= locals.user.img  %>" alt="<%= locals.user.name  %>" style="width:50px">
+          <a href="/usuario/<%= locals.user.id_usuario  %>">
+            <img src="/images//<%= locals.user.foto %>" alt="<%= locals.user.name  %>" style="width:50px">
           </a>
         </span>
         <ul class="menu">
@@ -68,7 +68,7 @@
               <a href="/posts/add"><i class="fa-regular fa-square-plus"></i></a>
             </li>
             <li>
-              <a href="/login"><i class="fa-regular fa-user"></i></a>
+              <a href="/users/myProfile"><i class="fa-regular fa-user"></i></a>
             </li>
             <li> <a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> </li>
           </ul>

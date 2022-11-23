@@ -38,7 +38,7 @@ const imgController = {
         return res.render('agregarPost');
     } else {
         db.Post.create({
-          id_usuario: 1,
+          id_usuario: req.session.user.id_usuario,
           descripcion: req.body.descripcion,
           name_img: req.file.filename,
           comments: req.file.Comentario

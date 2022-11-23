@@ -8,9 +8,9 @@
     <main>
       <div class="user-detail container">
         <section class="top main-content">
-          <img class="profile" src="<%= user.foto %> " alt="" />
+          <img class="profile" src="<%= locals.user.foto %> " alt="" />
           <div class="info-usuario">
-            <p><%= user.username %></p>
+            <p><%= locals.user.usuario %></p>
             <a class="follow" href="/users/myProfile/edit"
               ><i class="fa-solid fa-user-gear"></i
             ></a>
@@ -22,11 +22,11 @@
           </div>
         </section>
         <section class="bottom">
-          <% for( let i = 0; i < 1; i++ ) { %>
+          <% for( let i = 0; i < user.post.length; i++ ) { %>
 
           <article class="post">
-            <a href="/posts/detail/id/<%#=user[i].postId%>">
-              <img src="<%#= img[i].postImg %> " alt="" />
+            <a href="/posts/detail/id/<%=user.post[0].id_post%>">
+              <img src="/images/posts/<%= user.post[0].name_img %> " alt="" />
             </a>
           </article>
           <% } %>
