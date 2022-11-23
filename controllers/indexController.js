@@ -79,7 +79,7 @@ const controller = {
       },
     store: (req, res) => {
         let userInfo = req.body;
-        // let imgPefil = req.file.filename;
+        //let imgPefil = req.file.filename;
         let user = {
           nombre: userInfo.firstName + ' ' + userInfo.lastName,
           email: userInfo.email,
@@ -87,8 +87,8 @@ const controller = {
           contrasenia: bycript.hashSync(userInfo.password, 10),
           fecha_nacimiento: userInfo.date,
           numero_documento: userInfo.dni,
-          foto: 'asd'
-          // img: imgPefil,
+          //name_img: req.file.filename
+          //img: imgPefil,
         };
         User.create(user).then((result) => {
             return res.redirect("/login/");
