@@ -77,8 +77,25 @@ const controller = {
         return res.render("registracion", {});
       },
     store: (req, res) => {
+        let errors = {};
+
+        if (req.body.email == "") {
+            errors.message = "Tiene que ingresar un email";
+            res.locals.errors = errors;
+            return res.render('registracion');
+        
+        }else if(req.body.password < 3){
+            errors.message = "La contraseña debe tener más de 3 caracteres";
+            res.locals.errors = errors;
+            return res.render('registracion');
+
+        }else if(req.body.password == ""){
+            errors.message = "Debe ingresar una contraseña";
+            res.locals.errors = errors;
+            return res.render('registracion');
+        } else {
+
         let userInfo = req.body;
-        //let imgPefil = req.file.filename;
         let user = {
           nombre: userInfo.firstName + ' ' + userInfo.lastName,
           email: userInfo.email,
@@ -87,7 +104,6 @@ const controller = {
           fecha_nacimiento: userInfo.date,
           numero_documento: userInfo.dni,
           foto: userInfo.foto
-          //img: imgPefil,
         };
         User.create(user).then(() => {
             return res.redirect("/login/");
@@ -95,6 +111,7 @@ const controller = {
           .catch((err) => {
             return console.log(err);
           });
+        } 
       },
     results: function(req,res) {
         return res.render('resultadoBusqueda',{})
