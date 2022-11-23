@@ -18,10 +18,10 @@
       </div>
       <div class="navbar-right">
         <span class="navbar-brand">
-          <a href="#">Bienvenido, <%= locals.user.firstName  %> </a>
+          <a href="#">Bienvenido, <%= locals.user.nombre  %> </a>
          
-          <a href="/usuario/<%= locals.user.id  %>">
-            <img src="/images/usuarios/<%= locals.user.img  %>" alt="<%= locals.user.name  %>" style="width:50px">
+          <a href="/usuario/<%= locals.user.id_usuario  %>">
+            <img src="/images/usuarios/<%= locals.user.foto %>" alt="<%= locals.user.name  %>" style="width:50px">
           </a>
         </span>
         <ul class="menu">
