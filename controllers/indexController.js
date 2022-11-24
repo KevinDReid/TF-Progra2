@@ -32,38 +32,51 @@ const controller = {
         }
     },
     loginPost: (req, res) => {
-        let info = req.body;
-        let filtro = {
-          where: [{email: info.email }],
-        };
-        User.findOne(filtro)
-          .then((result) => {
-            if (result != null) {
-
-              let passEncriptada = bycript.compareSync(
-                info.password,
-                result.contrasenia
-                );
-                console.log(passEncriptada)
-              
-                if (passEncriptada) {
-                  req.session.user = result.dataValues;
-
+        let errors = {};
+        if (req.body.email = "") {
+            errors.message = "Debe ingresar un email";
+            res.locals.errors = errors;
+            return res.render('login');
+        
+        }else if(req.body.password == ""){
+            errors.message = "Debe ingresar una contraseña";
+            res.locals.errors = errors;
+            return res.render('login');
+        } else {
+            let info = req.body;
+            let filtro = {
+              where: [{email: info.email }],
+            };
+            User.findOne(filtro)
+              .then((result) => {
+                if (result != null) {
     
-                if (info.remember != undefined) {
-                  res.cookie("userId", result.dataValues.id_usuario, {
-                    maxAge: 1000 * 60 * 10,
-                  });
+                  let passEncriptada = bycript.compareSync(
+                    info.password,
+                    result.contrasenia
+                    );
+                    console.log(passEncriptada)
+                  
+                    if (passEncriptada) {
+                      req.session.user = result.dataValues;
+    
+        
+                    if (info.remember != undefined) {
+                      res.cookie("userId", result.dataValues.id_usuario, {
+                        maxAge: 1000 * 60 * 10,
+                      });
+                    }
+        
+                    return res.redirect("/");
+                  } else {
+                    return res.send("La clave no coincide");
+                  }
                 }
-    
-                return res.redirect("/");
-              } else {
-                return res.send("La clave no coincide");
-              }
-            }
-          })
-          .catch((error) => console.log(error));
-      },
+              })
+              .catch((error) => console.log(error));
+          }
+        },
+
     logout:(req,res)=>{
         req.session.destroy();
 
@@ -73,12 +86,14 @@ const controller = {
 
         return res.render('login', {});
     },
+    
     reg: (req, res) => {
         return res.render("registracion", {});
       },
     store: (req, res) => {
       
         let errors = {};
+
 
         if (req.file == undefined) {
           errors.message = "Tiene que ingresar una foto";
@@ -115,12 +130,25 @@ const controller = {
         }
        
 
-        else if (req.body.email == "") {
-          errors.message = "Tiene que ingresar su email";
-          res.locals.errors = errors;
-          return res.render('registracion');
-    
+      
+        else if(req.body.email == ""){
+            errors.message = "Debe ingresar un email";
+            res.locals.errors = errors;
+            return res.render('registracion');
+
         }
+        
+        else if(req.body.date == ""){
+            errors.message = "Debe ingresar una fecha de nacimiento";
+            res.locals.errors = errors;
+            return res.render('registracion');
+        }
+        
+        else if(req.body.dni == ""){
+            errors.message = "Debe ingresar un DNI";
+            res.locals.errors = errors;
+            return res.render('registracion');
+        } 
 
         else if (req.body.date == "") {
           errors.message = "Tiene que ingresar su fecha de nacimiento";
