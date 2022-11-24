@@ -9,10 +9,10 @@
         <div class="post-detail container">
           <section class="center main-content post">
             <div class="info-usuario">
-              <img class="userImg" src="/images/users/<%= post.name_img %> " alt="" />
+              <img class="userImg" src="/images/users/<%= user.dataValues.foto %> " alt="" />
               <p>
-                <a class="fix-link" href="/users/id/<%= post.id_list %>">
-                  <%= post.id_list %>
+                <a class="fix-link" href="/users/id/<%= post.id_usuario %>">
+                  <%= user.dataValues.usuario %>
                 </a>
               </p>
             </div>
@@ -46,11 +46,14 @@
         </div>
           <% if(locals.user !=undefined && locals.user.id_usuario == post.id_usuario){ %>
             <div>
-              <a href="">Eliminar posteo</a>
-            </div>
-            <div>
-              <a href="#">Editar posteo</a>
-            </div>
+              <form action="/posts/delete/<%= post.id_post %>" method="POST">
+                <input class="btn btn-danger m-2" type="submit" value="Eliminar">
+              </form>      
+                <div>
+                  <form action="/posts/update/<%= post.id_post %>" method="GET">
+                    <input class="btn btn-danger m-2" type="submit" value="Editar posteo">
+                  </form>    
+                </div>
           <% } %>
       </main>
 

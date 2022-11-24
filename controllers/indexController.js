@@ -57,7 +57,6 @@ const controller = {
                     info.password,
                     result.contrasenia
                     );
-                    console.log(passEncriptada)
                   
                     if (passEncriptada) {
                       req.session.user = result.dataValues;
@@ -183,7 +182,6 @@ const controller = {
     },
     newComment: (req, res) => {
       let info = req.body;
-      // console.log(req.body)
 
       let cum ={
           id_post: info.id_post,

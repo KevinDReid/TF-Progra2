@@ -4,9 +4,13 @@ const user = db.Usuario
 const usersController = {
   userDetail: function (req, res) {
     let id = req.params.id;
-    db.Post.findAll({where:[{
+    db.Post.findAll({
+      where:[{
       id_usuario: id
-    }]})
+    }], 
+    order: [
+      ['created_at', 'DESC']
+    ] })
     .then(post => {
       user.findByPk(id).then((us)=>{
 
@@ -42,7 +46,6 @@ const usersController = {
   user.findByPk(id,relaciones)         
   .then((result) => {
     
-    console.log(result)
       return res.render("miPerfil", {user : result})
   })
   .catch((err) =>{

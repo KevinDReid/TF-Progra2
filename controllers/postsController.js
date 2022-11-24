@@ -16,10 +16,13 @@ const imgController = {
       }
     })
     .then(post => {
-     //   res.send(post)
-     res.render("detallePost", {
-      post: post
-     })
+      db.Usuario.findByPk(post.dataValues.id_usuario).then((resu)=>{
+
+        res.render("detallePost", {
+          post: post,
+          user: resu
+        })
+      })
     })
   },
   add: function (req, res) {
@@ -58,8 +61,9 @@ const imgController = {
     
 },
 updatePost:(req,res)=>{
+  console.log('ANOSNDANSDOASIODNOAIS')
     let filtro = {
-        where:[{id:req.body.id}]
+        where:[{id_post:req.body.id}]
     }
     let info = req.body;
 
@@ -72,20 +76,20 @@ updatePost:(req,res)=>{
     })
 },
 destroy:(req,res)=>{
-let id = req.body.id;
-let filtro = {
-    where:[{
-        id:id
-    }]
-}
-post.destroy(filtro)
-.then((result)=>{
-    return res.redirect('/')
-})
-.catch((err)=>{
-    console.log(err);
-    return res.redirect('/')
-})
+  let id = req.body.id;
+
+  post.destroy({where:[{
+    id_post:id
+}]})
+  .then((result)=>{
+    console.log('ANOSNDANSDOASIODNOAIS')
+
+      return res.redirect('/')
+  })
+  .catch((err)=>{
+      console.log(err);
+      return res.redirect('/')
+  })
 }
 };
 
