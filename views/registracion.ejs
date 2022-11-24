@@ -8,12 +8,8 @@
     <main>
       <section class="center main-content">
         <h1>Registro</h1>
-        <form  class="formRe" action="/register/registrar" method="POST" enctype="multipart/form-data">
-          <div>
-            <% if(locals.errors){%>
-              <%= locals.errors.message%> <br> <br>
-            <% }%>
-          </div>
+        <% if(locals.errors) {%> <p><%= locals.errors.message %> </p> <% } %>
+        <form  class="formRe" action="/register" method="POST" enctype="multipart/form-data">
           <div >
             <label for="foto">Introduzca su foto de perfil:</label>
             <input class="imgperfil" type="file" name="foto" id="pfp" placeholder="Introduzca su foto de perfil"/>

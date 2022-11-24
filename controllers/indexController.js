@@ -33,7 +33,7 @@ const controller = {
     },
     loginPost: (req, res) => {
         let errors = {};
-        if (req.body.email = "") {
+        if (req.body.email == "") {
             errors.message = "Debe ingresar un email";
             res.locals.errors = errors;
             return res.render('login');
@@ -86,7 +86,7 @@ const controller = {
 
         return res.render('login', {});
     },
-    
+
     reg: (req, res) => {
         return res.render("registracion", {});
       },
@@ -96,7 +96,7 @@ const controller = {
 
 
         if (req.file == undefined) {
-          errors.message = "Tiene que ingresar una foto";
+          errors.message = "Tiene que ingresar una foto de perfil";
           res.locals.errors = errors;
           return res.render('registracion');
       
@@ -129,8 +129,6 @@ const controller = {
 
         }
        
-
-      
         else if(req.body.email == ""){
             errors.message = "Debe ingresar un email";
             res.locals.errors = errors;
@@ -150,22 +148,8 @@ const controller = {
             return res.render('registracion');
         } 
 
-        else if (req.body.date == "") {
-          errors.message = "Tiene que ingresar su fecha de nacimiento";
-          res.locals.errors = errors;
-          return res.render('registracion');
-    
-        }
-
-        else if (req.body.dni == "") {
-          errors.message = "Tiene que ingresar su numero de documento";
-          res.locals.errors = errors;
-          return res.render('registracion');
-    
-        }
-
         else if (req.body.dni.length != 8) {
-          errors.message = "Tiene que tener 8 numeros";
+          errors.message = "El DNI tiene que tener 8 dígitos";
           res.locals.errors = errors;
           return res.render('registracion');
     
