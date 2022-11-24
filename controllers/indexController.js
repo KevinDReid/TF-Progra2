@@ -20,8 +20,10 @@ const controller = {
             order: [['created_at', 'DESC']]
         })
         .then((result) => {
-
-            return res.render("index", {posts : result})
+          User.findAll({}).then((us)=> {
+            
+              return res.render("index", {posts : result, users: us})
+            })
         });
     },
     log: function(req, res){
@@ -180,21 +182,22 @@ const controller = {
         return res.render('resultadoBusqueda',{})
     },
     newComment: (req, res) => {
-        // let info = req.body;
-        // console.log(req.body)
+      let info = req.body;
+      // console.log(req.body)
 
-        // let cum ={
-        //     id_post: info.id_post,
-        //     // id_usuario: res.locals,
-        //     comentario: info.comment,
+      let cum ={
+          id_post: info.id_post,
+          id_usuario: req.session.user.id_usuario,
+          comentario: info.comment,
+      }
 
-        // }
-        // Comm.create(cum).then((result)=> {
-            return res.redirect('/')
-        // })
+      Comm.create(cum).then(()=> {
+          return res.redirect('/')
+      
+      })
 
-    }
-    
+  }
+  
 }
 
 module.exports = controller

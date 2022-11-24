@@ -9,7 +9,7 @@
         <div class="post-detail container">
           <section class="center main-content post">
             <div class="info-usuario">
-              <img class="userImg" src="/images/usuarios/<%= post.name_img %> " alt="" />
+              <img class="userImg" src="/images/users/<%= post.name_img %> " alt="" />
               <p>
                 <a class="fix-link" href="/users/id/<%= post.id_list %>">
                   <%= post.id_list %>
@@ -28,7 +28,7 @@
               <% for( let i=0; i < post.comentarios.length; i++ ) { %>
                 <div>
                   <article class="comment">
-                    <img class="commentPfp" src="/images/usuarios/<%= post.comentarios[i].usuario.foto%>" alt="" />
+                    <img class="commentPfp" src="/images/users/<%= post.comentarios[i].usuario.foto%>" alt="" />
                     <section class="content">
                       <a class="fix-link" class="user" href="/users/id/commentatorId> ">
                         comentario:

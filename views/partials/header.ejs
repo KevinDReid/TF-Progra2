@@ -18,10 +18,10 @@
       </div>
       <div class="navbar-right">
         <span class="navbar-brand">
-          <a href="#">Bienvenido, <%= locals.user.nombre  %> </a>
+          <a href="#">Bienvenido, <%= locals.user.usuario  %> </a>
          
-          <a href="/usuario/<%= locals.user.id_usuario  %>">
-            <img src="/images//<%= locals.user.foto %>" alt="<%= locals.user.name  %>" style="width:50px">
+          <a href="/users/id/<%= locals.user.id_usuario  %>">
+            <img src="/images/<%= locals.user.foto %>" alt="<%= locals.user.usuario  %>" style="width:50px">
           </a>
         </span>
         <ul class="menu">
@@ -59,7 +59,7 @@
         </div>
         <div class="navbar-right">
           <ul class="menu">
-            <li><a class="fontH" href="/register/registro">Registro</a></li>
+            <li><a class="fontH" href="/register">Registro</a></li>
             <li><a class="fontH" href="/login">Login</a></li>
             <li>
               <a href="/"><i class="fa-solid fa-house"></i></a>

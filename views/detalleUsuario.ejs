@@ -8,30 +8,34 @@
     <main>
       <div class="user-detail container">
         <section class="top main-content">
-          <img class="profile" src="<%= user.foto %> " alt="" />
-          <div class="info-usuario">
-            <p><%= user.usuario %></p>
-            <a class="follow" href="/">seguir</a>
+          <img class="profile" src="/images/users/<%= user.dataValues.foto %>" alt="" />
+          <div class="info-usuario usContainer">
+            <p class="us"><%=user.dataValues.usuario%></p>
             <ul class="meta">
-              <li><%=%> post</li>
-              <li><%=%> seguidores</li>
-              <li><%=%> seguidos</li>
+              <li><%=post.length%> post</li>
+              <li><%#=%> seguidores</li>
+              <li><%#=%> seguidos</li>
             </ul>
           </div>
+          <a class="follow" href="/">seguir</a>
         </section>
         <section class="bottom">
-          <% for( let i = 0; i < 3; i++ ) { %>
-
-          <article class="post">
-            <a href="/posts/detail/id/<%=img[i].postId%>">
-              <img src="<%= img[i].postImg %>" alt="" />
-            </a>
-          </article>
-          <% } %>
-        </section>
-      </div>
-    </main>
-
-    <%- include('./partials/footer.ejs')%>
+          <% console.log(post) %> 
+          <% if (post.length > 0) { %>
+           
+            <% for( let i = 0; i < post.length; i++ ) { %>
+              
+              <article class="post">
+                <a href="/posts/detail/id/<%=post[i].id_post%>">
+                  <img src="/images/posts/<%= post[i].name_img %>" alt="" />
+                </a>
+              </article>
+              <% } %>
+              <% } %>
+            </section>
+          </div>
+        </main>
+        
+        <%- include('./partials/footer.ejs')%>
   </body>
 </html>
