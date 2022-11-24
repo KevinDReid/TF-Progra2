@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 const post = db.Post;
 
+
 const imgController = {
   img: function (req, res) {
 
@@ -64,6 +65,7 @@ const imgController = {
 },
 updatePost:(req,res)=>{
     let info = req.body;
+    console.log('EEEEEEEEEEE')
 
     post.update(
       {
@@ -71,8 +73,7 @@ updatePost:(req,res)=>{
         descripcion: req.body.descripcion
       },
       {
-      where:
-      {id_post : req.params.id}})
+      where: {id_post : req.params.id}})
     .then((result)=>{
       console.log('EEEEEEEEEEE')
 
@@ -83,21 +84,24 @@ updatePost:(req,res)=>{
     })
 },
 destroy:(req,res)=>{
-  let id = req.params.id;
+  let id = req.body.id;
+  console.log('JNLAKOSDNJASJ')
+  db.Comentario.destroy({where:[{id_post: id}]}).then((resu)=>{
 
-  post.destroy({where:[{
-    id_post:id
-}]})
-  .then((result)=>{
-    console.log('ANOSNDANSDOASIODNOAIS')
-
+    post.destroy({where:[{
+      id_post:id
+    }]})
+    .then((result)=>{
+      console.log(result)
+      
       return res.redirect('/')
-  })
-  .catch((err)=>{
+    })
+    .catch((err)=>{
       console.log(err);
       return res.redirect('/')
+    })
   })
-}
+  }
 };
 
 module.exports = imgController;
