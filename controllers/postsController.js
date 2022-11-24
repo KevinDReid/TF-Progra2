@@ -6,6 +6,7 @@ const post = db.Post;
 
 const imgController = {
   img: function (req, res) {
+
     db.Post.findOne({
       include: {
         all: true,
@@ -17,7 +18,7 @@ const imgController = {
     })
     .then(post => {
       db.Usuario.findByPk(post.dataValues.id_usuario).then((resu)=>{
-
+        
         res.render("detallePost", {
           post: post,
           user: resu
@@ -53,6 +54,7 @@ const imgController = {
   },
   update:(req,res)=>{
     let id = req.params.id;
+    
     post.findByPk(id)
     .then((result)=>{
         return res.render('updatePost',{post:result.dataValues})
@@ -61,14 +63,19 @@ const imgController = {
     
 },
 updatePost:(req,res)=>{
-  console.log('ANOSNDANSDOASIODNOAIS')
-    let filtro = {
-        where:[{id_post:req.body.id}]
-    }
     let info = req.body;
 
-    post.update(info,filtro)
+    post.update(
+      {
+        name_img: req.file.filename,
+        descripcion: req.body.descripcion
+      },
+      {
+      where:
+      {id_post : req.params.id}})
     .then((result)=>{
+      console.log('EEEEEEEEEEE')
+
         return res.redirect('/users/myProfile')
     })
     .catch(()=>{
@@ -76,7 +83,7 @@ updatePost:(req,res)=>{
     })
 },
 destroy:(req,res)=>{
-  let id = req.body.id;
+  let id = req.params.id;
 
   post.destroy({where:[{
     id_post:id
