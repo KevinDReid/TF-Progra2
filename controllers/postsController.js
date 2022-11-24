@@ -2,6 +2,7 @@ const data = require("../db/data");
 const db = require("../database/models");
 const multer = require('multer');
 const path = require('path');
+const post = db.Post;
 
 const imgController = {
   img: function (req, res) {
@@ -46,7 +47,46 @@ const imgController = {
         .then(()=>res.redirect("/"))
     }
     //return res.send(req.file)
-  }
+  },
+  update:(req,res)=>{
+    let id = req.params.id;
+    post.findByPk(id)
+    .then((result)=>{
+        return res.render('updatePost',{post:result.dataValues})
+    })
+    .catch(erro=>console.log(erro))
+    
+},
+updatePost:(req,res)=>{
+    let filtro = {
+        where:[{id:req.body.id}]
+    }
+    let info = req.body;
+
+    post.update(info,filtro)
+    .then((result)=>{
+        return res.redirect('/users/myProfile')
+    })
+    .catch(()=>{
+        return res.redirect('/')
+    })
+},
+destroy:(req,res)=>{
+let id = req.body.id;
+let filtro = {
+    where:[{
+        id:id
+    }]
+}
+post.destroy(filtro)
+.then((result)=>{
+    return res.redirect('/')
+})
+.catch((err)=>{
+    console.log(err);
+    return res.redirect('/')
+})
+}
 };
 
 module.exports = imgController;
