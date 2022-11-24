@@ -24,8 +24,10 @@ h1 {
 
 /* Generics */
 .userImg {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 100px;
+  border: 1px #ee6b2e solid
 }
 
 * {
@@ -163,6 +165,16 @@ main {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+
+.usContainer {
+  flex-direction: column;
+
+}
+
+.us {
+  display: flex;
+  align-self: flex-start;
 }
 
 .fix-link {
@@ -381,6 +393,7 @@ main {
 .profile {
   border-radius: 90%;
   border: 2px solid chocolate;
+  max-width: 80px;
 }
 
 .user-detail .meta {
@@ -388,8 +401,9 @@ main {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 250px;
 }
+
 
 /* index */
 

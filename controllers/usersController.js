@@ -5,18 +5,19 @@ const usersController = {
   userDetail: function (req, res) {
     let id = req.params.id;
     db.Post.findAll({
-      include: {
-        all: true,
-        nested: true
-      },
-      where: {
-        id: req.params.id
-      }
-    })
+      where:[{
+      id_usuario: id
+    }], 
+    order: [
+      ['created_at', 'DESC']
+    ] })
     .then(post => {
+      user.findByPk(id).then((us)=>{
+
+        res.render("detalleUsuario", {
+         post: post, user: us
+        })
      //   res.send(post)
-     res.render("detalleUsuario", {
-      post: post
      })
     })
   },
@@ -45,7 +46,6 @@ const usersController = {
   user.findByPk(id,relaciones)         
   .then((result) => {
     
-    console.log(result)
       return res.render("miPerfil", {user : result})
   })
   .catch((err) =>{
