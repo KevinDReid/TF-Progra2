@@ -28,13 +28,14 @@
               <% for( let i=0; i < post.comentarios.length; i++ ) { %>
                 <div>
                   <article class="comment">
-                    <img class="commentPfp" src="/images/usuarios/commentImg" alt="" />
+                    <img class="commentPfp" src="/images/usuarios/<%= post.comentarios[i].usuario.foto%>" alt="" />
                     <section class="content">
                       <a class="fix-link" class="user" href="/users/id/commentatorId> ">
-                        comentario
+                        comentario:
                       </a>
                       <span class="text">
-                        <%= post.id_post %>
+                        <%= post.comentarios[i].comentario%>
+
                       </span>
                     </section>
                   </article>
@@ -43,6 +44,16 @@
             </section>
           </section>
         </div>
+        <% if(locals.user){ %>
+          <% if(locals.user.id_usuario == post.id_usuario){ %>
+            <div>
+              <a href="">Eliminar posteo</a>
+            </div>
+            <div>
+              <a href="">Editar posteo</a>
+            </div>
+          <% } %>
+        <% } %>
       </main>
 
       <%- include('./partials/footer.ejs')%>

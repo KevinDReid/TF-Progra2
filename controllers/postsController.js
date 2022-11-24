@@ -11,7 +11,7 @@ const imgController = {
         nested: true
       },
       where: {
-        id: req.params.id
+        id_post: req.params.id
       }
     })
     .then(post => {
