@@ -8,6 +8,7 @@
     <main>
       <section class="center main-content">
         <h1>Login</h1>
+        <% if(locals.errors) {%> <p><%= locals.errors.message %> </p> <% } %>
         <form action="/login" method="POST">
           <div class="editProfile">
             <div class="editAllLabels">
