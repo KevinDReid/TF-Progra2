@@ -44,16 +44,14 @@
             </section>
           </section>
         </div>
-        <% if(locals.user){ %>
-          <% if(locals.user.id_usuario == post.id_usuario){ %>
+          <% if(locals.user !=undefined && locals.user.id_usuario == post.id_usuario){ %>
             <div>
               <a href="">Eliminar posteo</a>
             </div>
             <div>
-              <a href="">Editar posteo</a>
+              <a href="#">Editar posteo</a>
             </div>
           <% } %>
-        <% } %>
       </main>
 
       <%- include('./partials/footer.ejs')%>

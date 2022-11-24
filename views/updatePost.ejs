@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs')%>
+
+  <body>
+    <%- include('./partials/header.ejs')%>
+
+    <main>
+      <section class="center main-content">
+        <h1>Editar Post</h1>
+        <form action="/posts/add" method="post" enctype="multipart/form-data">
+          <div class="input-container ic1">
+            <input id="id" hidden class="input" type="text" name="id" value="<%= post.id_post%> " readonly/>
+        </div>
+          <div class="editProfile">
+            <div class="editAllInputs">
+              <input class="editInput" type="file" name="foto" id="pfp" value="<%= post.name_img%> "/>
+            </div>
+            <div class="editAllInputs">
+              <label>Descripción</label>
+              <input class="editInput" type="text" name="descripcion" id="pfp" value="<%= post.descripcion%>"/>
+            </div>
+          </div>
+          <% if (locals.errors) { %>
+            <%= locals.errors.message %> 
+          <% }%>
+          <button class="submit" type="submit">Subir</button>
+        </form>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs')%>
+  </body>
+</html>
