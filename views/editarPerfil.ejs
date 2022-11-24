@@ -8,8 +8,11 @@
     <main>
       <section class="center main-content">
         <h1>Editar perfil</h1>
-        <form action="/users/myProfile">
+        <form class="formRe" action="/myProfile/edit" method="POST" enctype="multipart/form-data">
           <div class="editProfile">
+            <div class="input-container ic1">
+              <input id="id" hidden class="input" type="text" name="id" value="<%= user.id_usuario%> " readonly/>
+          </div>
             <div class="editAllLabels">
               <label class="editLabel">Username:</label>
               <label class="editLabel">Password:</label>
@@ -22,7 +25,7 @@
                 type="text"
                 name="username"
                 id="username"
-                placeholder="luis_navas"
+                value="<%= user.usuario%>"
               />
               <input
                 class="editInput"
@@ -31,7 +34,7 @@
                 id="password"
                 placeholder="********"
               />
-              <input class="editInput" type="email" name="email" id="email" />
+              <input class="editInput" type="email" name="email" id="email" value="<%= user.email%>" />
               <input class="editInput" type="file" name="pfp" id="pfp" />
             </div>
           </div>

@@ -53,7 +53,29 @@ const usersController = {
       return res.redirect("/users/myProfile")
   });
   },
-  
+  update:(req,res)=>{
+    let id = req.params.id;
+    user.findByPk(id)
+    .then((result)=>{
+        return res.render('editarPerfil',{user: result.dataValues})
+    })
+    .catch(erro=>console.log(erro))
+    
+},
+updatePost:(req,res)=>{
+    let filtro = {
+        where:[{id_usuario: req.body.id}]
+    }
+    let info = req.body;
+
+    user.update(info,filtro)
+    .then((result)=>{
+        return res.redirect('/users/myProfile')
+    })
+    .catch(()=>{
+        return res.redirect('/')
+    })
+},
 };
 
 
