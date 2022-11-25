@@ -26,6 +26,22 @@ const controller = {
             })
         });
     },
+    nav: (req, res) => {
+      let search = req.query.search;
+
+      let criterio = {
+        where : 
+          [{descripcion: {[op.like] : "%" + search + "%"}}]
+      }
+
+      Post.findOne(criterio)
+      .then((result) => {
+          return res.render('resultadoBusqueda'), {Post : result}
+      })
+      .catch((err) =>{
+        return res.redirect("/")
+    });
+    },
     log: function(req, res){
         if (req.session.user != undefined) {
             return res.redirect('/')
