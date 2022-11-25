@@ -46,8 +46,9 @@
         </div>
           <% if(locals.user !=undefined && locals.user.id_usuario == post.id_usuario){ %>
             <div>
-              <form action="/posts/delete/<%= post.id_post %>" method="POST">
+              <form action="/posts/delete" method="POST">
                 <input class="btn btn-danger m-2" type="submit" value="Eliminar">
+                <input type="hidden" name="id" value="<%= post.id_post %>" readonly>
               </form>      
                 <div>
                   <form action="/posts/update/<%= post.id_post %>" method="GET">
