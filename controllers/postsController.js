@@ -67,13 +67,13 @@ updatePost:(req,res)=>{
     let info = req.body;
     post.update(
       {
-        name_img: req.body.filename,
+        name_img: req.file.filename,
         descripcion: req.body.descripcion
       },
       {
       where: {id_post : req.body.id_info}})
     .then((result)=>{
-      console.log(req.body.id_info)
+      console.log(req.file.filename)
 
         return res.redirect('/posts/detail/id/' + req.body.id_info)
     })

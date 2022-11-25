@@ -7,9 +7,74 @@
 
     <main>
       <section class="center main-content">
-        <h1 class="noResults">No se han encontrado resultados de búsqueda.</h1>
+        <% for( let i = 0; i < posts.length; i++ ) { %>
+          <article class="post">
+          <% if(posts[i].id_usuario == posts[i].usuario.id_usuario) {%> 
+          <div class="info-usuario">
+            <img class="userImg" src="images/users/<%= posts[i].usuario.foto %> " alt="" />            
+                <h4>
+                  <a class="fix-link" href="/users/id/<%= posts[i].id_usuario %>"> <%= posts[i].usuario.usuario %> 
+                  </a>
+                </h4>
+                <% } %>
+          </div>
+          <div class="post-body">
+            <a href="/posts/detail/id/<%= posts[i].id_post %>">
+              <img src="/images/posts/<%= posts[i].name_img %>" alt="" />
+            </a>
+          </div>
+          <div class="descripcion">
+            <p><%=posts[i].descripcion%></p>
+          </div>
+          <ul class="post-reacciones">
+            <li class="likesAndStuff">
+              <i class="fa-regular fa-heart"> </i>
+            </li>
+            <li class="likesAndStuff">
+              <!-- <p class="likesText"> likes</p> -->
+            </li>
+            <li class="likesAndStuff">
+              <i class="fa-regular fa-comment"></i>
+            </li>
+          </ul>
+          <div class="post-comentarios">
+            <h4>Comentarios</h4>
+            <ul>
+              <% for( let a = 0; a < posts[i].comentarios.length; a++ ) { %>
+                <% if (posts[i].id_post == posts[i].comentarios[a].id_post ) {%> 
+                  <% if (a >= 2) {break} %> 
+
+                  <li class="comment">
+                    
+                    <a class="indexUsername" href="/users/id/<%= posts[i].comentarios[a].id_usuario %>"
+                      >
+                      <% for( let b = 0; b < users.length; b++ ) { %>
+                        
+                        <% if(posts[i].comentarios[a].id_usuario == users[b].dataValues.id_usuario) {%> 
+                          <img class="userImg" src="/images/users/<%= users[b].dataValues.foto %> " alt="asds" />            
+                          <%= users[b].dataValues.usuario %> 
+                          <% } %> 
+                      <% } %>
+                    </a>
+                    <p><%= posts[i].comentarios[a].comentario %></p>
+                  </li>
+                <% } %>
+                <% } %> 
+                <li>
+                  <a href="/posts/detail/id/<%= posts[i].id_post %>">Ver más...</a>
+                </li>
+              </ul>
+            <form action="/" method="POST">
+              <input type="text" name="comment" placeholder="Agrega un comentario..."> <button type="submit"></button>
+              <input type="hidden" name="id_post" value = <%= posts[i].id_post %> readonly>
+            </form>
+          </div>
+        </article>
+
+        <% } %>
       </section>
     </main>
+
 
     <%- include('./partials/footer.ejs')%>
   </body>

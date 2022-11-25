@@ -27,21 +27,33 @@ const controller = {
         });
     },
     nav: (req, res) => {
-      let search = req.query.search;
+      // let search = req.query.search;
 
-      let criterio = {
-        where : 
-          [{descripcion: {[op.like] : "%" + search + "%"}}]
-      }
-
-      Post.findOne(criterio)
-      .then((result) => {
-          return res.render('resultadoBusqueda'), {Post : result}
-      })
+      // let criterio = {
+      //   where : 
+      //     [{descripcion: {[op.like] : "%" + search + "%"}}]
+      // }
+      
+      Post.findAll({
+        where: [{descripcion: {[op.like] : "%" + req.query.search + "%"}}],
+        include: [
+            {
+                association: 'usuario'
+            },
+            {
+                association: 'comentarios'
+            }
+        ],
+        order: [['created_at', 'DESC']]
+    })
+    .then((result) => {
+      User.findAll({}).then((us)=> {
+          return res.render('resultadoBusqueda', {posts : result, users: us})})
       .catch((err) =>{
         return res.redirect("/")
+      })
     });
-    },
+},
     log: function(req, res){
         if (req.session.user != undefined) {
             return res.redirect('/')
