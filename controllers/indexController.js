@@ -210,11 +210,15 @@ const controller = {
           id_usuario: req.session.user.id_usuario,
           comentario: info.comment,
       }
+      if(req.session.user != undefined){
 
-      Comm.create(cum).then(()=> {
+        Comm.create(cum).then(()=> {
           return res.redirect('/')
-      
-      })
+          
+        })
+      }else {
+        return res.redirect('/login')
+      }
 
   }
   

@@ -30,6 +30,7 @@ const imgController = {
   add: function (req, res) {
     return res.render("agregarPost", {});
   },
+  
   create: function (req, res) {
     let errors = {};
 
@@ -58,7 +59,11 @@ const imgController = {
     
     post.findByPk(id)
     .then((result)=>{
-        return res.render('updatePost',{post:result.dataValues})
+        if(result.id_usuario == req.session.user.id_usuario){
+        return res.render('updatePost',{post:result.dataValues})}
+        else {
+          return res.redirect('/posts/detail/id/' + id)
+        }
     })
     .catch(erro=>console.log(erro))
     
@@ -73,7 +78,6 @@ updatePost:(req,res)=>{
       {
       where: {id_post : req.body.id_info}})
     .then((result)=>{
-      console.log(req.file.filename)
 
         return res.redirect('/posts/detail/id/' + req.body.id_info)
     })
