@@ -22,7 +22,7 @@ const imgController = {
         
         res.render("detallePost", {
           post: post,
-          user: resu
+          posteador: resu
         })
       })
     })

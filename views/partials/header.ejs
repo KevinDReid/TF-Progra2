@@ -14,6 +14,7 @@
       <div class="navbar-right">
         <span class="navbar-brand">
           <a href="#">Bienvenido, <%= locals.user.usuario  %> </a>
+          <% console.log(locals) %> 
          
           <a href="/users/id/<%= locals.user.id_usuario  %>">
             <img src="/images/<%= locals.user.foto %>" alt="<%= locals.user.usuario  %>" style="width:50px">
