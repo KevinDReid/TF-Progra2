@@ -27,12 +27,6 @@ const controller = {
         });
     },
     nav: (req, res) => {
-      // let search = req.query.search;
-
-      // let criterio = {
-      //   where : 
-      //     [{descripcion: {[op.like] : "%" + search + "%"}}]
-      // }
       
       Post.findAll({
         where: [{descripcion: {[op.like] : "%" + req.query.search + "%"}}],
