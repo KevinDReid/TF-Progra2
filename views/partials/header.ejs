@@ -14,7 +14,6 @@
       <div class="navbar-right">
         <span class="navbar-brand">
           <a href="#">Bienvenido, <%= locals.user.usuario  %> </a>
-          <% console.log(locals) %> 
          
           <a href="/users/id/<%= locals.user.id_usuario  %>">
             <img src="/images/<%= locals.user.foto %>" alt="<%= locals.user.usuario  %>" style="width:50px">
@@ -60,12 +59,7 @@
             <li>
               <a href="/"><i class="fa-solid fa-house"></i></a>
             </li>
-            <li>
-              <a href="/posts/add"><i class="fa-regular fa-square-plus"></i></a>
-            </li>
-            <li>
-              <a href="/users/myProfile"><i class="fa-regular fa-user"></i></a>
-            </li>
+
           </ul>
         </div>
       </nav>

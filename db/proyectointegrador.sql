@@ -15,15 +15,13 @@ CREATE TABLE `comentarios`  (
   INDEX `id_usuario`(`id_usuario` ASC) USING BTREE,
   CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_post`) REFERENCES `post` (`id_post`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 62 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
+) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 INSERT INTO `comentarios` VALUES (1, 1, 3, 'thats a nice dough man', '2022-11-14 09:35:54', '2022-11-20 11:59:47');
 INSERT INTO `comentarios` VALUES (2, 1, 2, 'Es de masa madre?', '2022-11-20 12:01:11', '2022-11-20 12:01:11');
 INSERT INTO `comentarios` VALUES (3, 1, 1, 'I love making my own dough', '2022-11-20 12:01:20', '2022-11-20 12:01:41');
 INSERT INTO `comentarios` VALUES (4, 1, 2, 'tiene una pinta!\"', '2022-11-20 12:01:25', '2022-11-20 12:01:45');
 INSERT INTO `comentarios` VALUES (5, 2, 2, 'pruebaa', '2022-11-20 16:25:07', '2022-11-20 16:25:07');
-
 
 DROP TABLE IF EXISTS `post`;
 CREATE TABLE `post`  (
@@ -37,23 +35,21 @@ CREATE TABLE `post`  (
   PRIMARY KEY (`id_post`) USING BTREE,
   INDEX `id_usuario`(`id_usuario` ASC) USING BTREE,
   CONSTRAINT `post_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
+) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 INSERT INTO `post` VALUES (1, 1, 'pizzadough.jpeg', 'Una masaaa', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:29');
 INSERT INTO `post` VALUES (2, 2, 'pizza1.jpeg', 'Pizza vegana, me encanta!', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:32');
 INSERT INTO `post` VALUES (3, 3, 'tierlist-1.png', 'Que opinan de mi tier list?', 0, '2022-11-06 17:06:37', '2022-11-20 19:24:34');
 INSERT INTO `post` VALUES (5, 5, 'pizza-sauce-1.jpeg', 'Tuquito pa la pizza', 0, '2022-11-06 17:06:37', '2022-11-20 19:25:35');
-INSERT INTO `post` VALUES (12, 1, 'foto-1668983269312.jpg', 'asdasdas', 0, '2022-11-20 19:27:49', '2022-11-20 19:27:49');
-INSERT INTO `post` VALUES (13, 1, 'foto-1668989561781.png', 'HOLA TEST', 0, '2022-11-20 21:12:41', '2022-11-20 21:12:41');
-
+INSERT INTO `post` VALUES (30, 66, 'foto-1669339995803.jpeg', 'JAJJA', 0, '2022-11-24 20:17:26', '2022-11-24 22:33:15');
+INSERT INTO `post` VALUES (37, 68, 'foto-1669342485627.jpeg', 'fasfasdfa', 0, '2022-11-24 23:14:45', '2022-11-24 23:14:45');
 
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios`  (
   `id_usuario` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `contrasenia` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `contrasenia` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `fecha_nacimiento` date NOT NULL,
   `numero_documento` int UNSIGNED NOT NULL,
@@ -65,15 +61,15 @@ CREATE TABLE `usuarios`  (
   UNIQUE INDEX `numero_documento`(`numero_documento` ASC) USING BTREE,
   UNIQUE INDEX `email`(`nombre` ASC) USING BTREE,
   UNIQUE INDEX `usuario`(`contrasenia` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 69 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
-
-INSERT INTO `usuarios` VALUES (1, 'Jper', 'Juan perez', '0000000', 'asd@asd.com', '2022-11-17', 1111111, 'https://i.picsum.photos/id/542/100/100.jpg?hmac=EavgKTsRDE_2g8glcjuC2eb_EcK8WylXYzbiK5i98HU', '2022-11-06 17:06:37', '2022-11-20 17:32:17', NULL);
-INSERT INTO `usuarios` VALUES (2, 'luisg', 'luis navas', '0000001', 'hola@asd.com', '2022-11-10', 1111112, 'https://i.picsum.photos/id/648/100/100.jpg?hmac=o7JDnU4_1C2PWLUoAnuMYeedPF1TkXhi6jjFJLw_LLo', '2022-11-06 17:06:37', '2022-11-20 17:32:19', NULL);
-INSERT INTO `usuarios` VALUES (3, 'briang', 'brian navas', '0000010', 'chau@asd.com', '2022-11-25', 1111121, 'https://i.picsum.photos/id/640/100/100.jpg?hmac=w_T17sT5OZPBWOrXtiRegsQxm_lfJ942_gVgOyO5sIY', '2022-11-06 17:06:37', '2022-11-20 17:32:22', NULL);
-INSERT INTO `usuarios` VALUES (4, 'sebper', 'sebastian pereira', '0000011', 'gmail@asd.com', '2022-11-30', 1111122, 'https://i.picsum.photos/id/964/100/100.jpg?hmac=_id-TbaudbdfOV6_2_XIt8DpumpQJ7SdJFJ-m7Od_wU', '2022-11-06 17:06:37', '2022-11-20 17:32:25', NULL);
-INSERT INTO `usuarios` VALUES (5, 'simalv', 'silon aubernial', '0000100', 'qwerty@asd.com', '2022-11-07', 1111211, 'https://i.picsum.photos/id/524/100/100.jpg?hmac=0avlj_3ml3OBJI4GpocHVRDlhSeP6srgGRuPCIUaCy4', '2022-11-06 17:06:37', '2022-11-20 17:32:27', NULL);
-INSERT INTO `usuarios` VALUES (34, 'prueba', 'prueba prueba', '$2a$10$RVkKXVqLk7AYOOI6Mv6hx.67pnvYN9l2w8jltVkHe2d', 'kevinreid301@gmail.com', '2022-11-08', 561561, 'asd', '2022-11-20 21:40:33', '2022-11-20 21:40:33', NULL);
-INSERT INTO `usuarios` VALUES (35, 'asfasfasfa', 'asdghadfasf asfasfasfas', '$2a$10$kyKTKuO/ONHPzXby0mUF0.0m8K8DLaoYoV90/KJh6sv', '123@132.com', '2022-10-31', 651156161, 'asd', '2022-11-20 22:26:35', '2022-11-20 22:26:35', NULL);
+INSERT INTO `usuarios` VALUES (1, 'Jper', 'Juan perez', '0000000\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', 'asd@asd.com', '2022-11-17', 1111111, 'e219f3d1bbf89e7fd608ccf0a7f7f143_c5_720x720.jpeg', '2022-11-06 17:06:37', '2022-11-24 23:28:22', NULL);
+INSERT INTO `usuarios` VALUES (2, 'luisg', 'luis navas', '0000001\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', 'hola@asd.com', '2022-11-10', 1111112, '35c37305852f8778a24f0da28de61a2c.jpg', '2022-11-06 17:06:37', '2022-11-24 23:22:17', NULL);
+INSERT INTO `usuarios` VALUES (3, 'briang', 'brian navas', '0000010\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', 'chau@asd.com', '2022-11-25', 1111121, 'cowboy-avatar-icon-Graphics-1.png', '2022-11-06 17:06:37', '2022-11-24 23:29:44', NULL);
+INSERT INTO `usuarios` VALUES (4, 'sebper', 'sebastian pereira', '0000011\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', 'gmail@asd.com', '2022-11-30', 1111122, '1149378.png', '2022-11-06 17:06:37', '2022-11-24 23:30:40', NULL);
+INSERT INTO `usuarios` VALUES (5, 'simalv', 'silon aubernial', '0000100\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0', 'qwerty@asd.com', '2022-11-07', 1111211, 'images.png', '2022-11-06 17:06:37', '2022-11-24 23:31:50', NULL);
+INSERT INTO `usuarios` VALUES (66, 'gg', 'rty undefined', '123456', 'rty@rty.com', '3456-02-01', 96325874, 'pfp-1669340786465.jpg', '2022-11-24 18:31:14', '2022-11-24 22:46:26', NULL);
+INSERT INTO `usuarios` VALUES (67, 'ckquebyn', 'Kevin undefined', '$2a$10$mu7UaEzY4cyQtGlWrHhZmuqapADxhrkYYVBJjSxfShR0cnOP7RaU6', 'kevinreid301@gmail.com', '2002-12-09', 44599830, 'foto-1669326827648.jpeg', '2022-11-24 18:53:47', '2022-11-24 18:53:47', NULL);
+INSERT INTO `usuarios` VALUES (68, 'asfasf', 'asdgasf undefined', '$2a$10$mt7T4m0RYCcUQnBRUwMhfu/XEYIQUevZDVZ0hY4KwwYlHgIJuL2E6', '123@123.com', '1612-12-16', 7658911, 'foto-1669341714063.jpeg', '2022-11-24 23:01:54', '2022-11-24 23:01:54', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

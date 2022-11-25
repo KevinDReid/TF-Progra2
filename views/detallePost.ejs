@@ -30,8 +30,8 @@
                   <article class="comment">
                     <img class="commentPfp" src="/images/users/<%= post.comentarios[i].usuario.foto%>" alt="" />
                     <section class="content">
-                      <a class="fix-link" class="user" href="/users/id/commentatorId> ">
-                        comentario:
+                      <a class="fix-link" class="user" href="/users/id/<%= post.comentarios[i].usuario.id_usuario %> ">
+                        <%= post.comentarios[i].usuario.usuario %> 
                       </a>
                       <span class="text">
                         <%= post.comentarios[i].comentario%>

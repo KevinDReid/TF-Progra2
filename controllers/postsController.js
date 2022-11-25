@@ -83,20 +83,27 @@ updatePost:(req,res)=>{
 },
 destroy:(req,res)=>{
   let id = req.body.id;
-  db.Comentario.destroy({where:[{id_post: id}]}).then((resu)=>{
+  db.Post.findByPk(id).then((result)=>{
 
-    post.destroy({where:[{
-      id_post:id
-    }]})
-    .then((result)=>{
-      console.log(result)
+    if(result.id_usuario == req.session.user.id_usuario){
+    db.Comentario.destroy({where:[{id_post: id}]}).then((resu)=>{
       
-      return res.redirect('/')
-    })
-    .catch((err)=>{
-      console.log(err);
-      return res.redirect('/')
-    })
+      post.destroy({where:[{
+        id_post:id
+      }]})
+      .then((result)=>{
+        console.log(result)
+        
+        return res.redirect('/')
+      })
+      .catch((err)=>{
+        console.log(err);
+        return res.redirect('/')
+      })
+    })}
+    else {
+      return res.redirect('/posts/detail/id/' + id)
+    }
   })
   }
 };
