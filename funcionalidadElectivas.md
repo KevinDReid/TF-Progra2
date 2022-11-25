@@ -2,9 +2,9 @@
 Funcionalidades Electivas Proyecto
 ........
 ## Funcionalidad 🚀
-* Primera Funcion
-* Segunda Funcion
-* Tercera Funcion
+* Imagen de perfil (0,5 puntos)
+* Validaciones interactivas (0,5 puntos)
+* Editar datos del usuario (1 punto)
 
 ## Colaboradores ✒️
 
