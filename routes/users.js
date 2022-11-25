@@ -20,9 +20,8 @@ let upload = multer({storage: storage});
 
 router.get("/myProfile", usersController.myProfile);
 router.get("/id/:id", usersController.userDetail);
-router.get("/myProfile/edit", usersController.editProfile);
 router.get("/myProfile/edit", usersController.update);
-router.post("/myProfile/edit", upload.single('pfp'), usersController.updatePost)
+router.post("/myProfile/edit", upload.single('pfp'), usersController.updateProfile)
 
 
 

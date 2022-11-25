@@ -21,15 +21,6 @@ const usersController = {
      })
     })
   },
-  editProfile: function (req, res) {
-    let id = req.params.id;
-    let idBuscado = users.buscarId(id);
-    let imgBuscado = users.searchImg(id);
-    return res.render("editarPerfil", {
-      user: idBuscado,
-      img: imgBuscado,
-    });
-  },
   myProfile: function (req, res) {
     let id = req.session.user.id_usuario;
     let relaciones = {
@@ -54,7 +45,7 @@ const usersController = {
   });
   },
   update:(req,res)=>{
-    let id = req.params.id;
+    let id = req.session.user.id_usuario;
     user.findByPk(id)
     .then((result)=>{
         return res.render('editarPerfil',{user: result.dataValues})
@@ -62,13 +53,23 @@ const usersController = {
     .catch(erro=>console.log(erro))
     
 },
-updatePost:(req,res)=>{
+updateProfile:(req,res)=>{
+  
     let filtro = {
-        where:[{id_usuario: req.body.id}]
+        where:[{id_usuario: req.session.user.id_usuario}]
     }
     let info = req.body;
 
-    user.update(info,filtro)
+    user.update({
+      usuario: req.body.username,
+      contrasenia: req.body.password,
+      email: req.body.email,
+      foto: req.file.filename
+    },
+    {
+    where: {
+      id_usuario: req.session.user.id_usuario
+    }})
     .then((result)=>{
         return res.redirect('/users/myProfile')
     })
