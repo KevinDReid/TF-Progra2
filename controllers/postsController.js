@@ -65,19 +65,17 @@ const imgController = {
 },
 updatePost:(req,res)=>{
     let info = req.body;
-    console.log('EEEEEEEEEEE')
-
     post.update(
       {
-        name_img: req.file.filename,
+        name_img: req.body.filename,
         descripcion: req.body.descripcion
       },
       {
-      where: {id_post : req.params.id}})
+      where: {id_post : req.body.id_info}})
     .then((result)=>{
-      console.log('EEEEEEEEEEE')
+      console.log(req.body.id_info)
 
-        return res.redirect('/users/myProfile')
+        return res.redirect('/posts/detail/id/' + req.body.id_info)
     })
     .catch(()=>{
         return res.redirect('/')
@@ -85,7 +83,6 @@ updatePost:(req,res)=>{
 },
 destroy:(req,res)=>{
   let id = req.body.id;
-  console.log('JNLAKOSDNJASJ')
   db.Comentario.destroy({where:[{id_post: id}]}).then((resu)=>{
 
     post.destroy({where:[{

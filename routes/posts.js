@@ -22,7 +22,7 @@ router.get("/add", postController.add);
 router.post("/add", upload.single('foto'), postController.create);
 router.get("/detail/id/:id", postController.img);
 
-router.get('/update/:id', postController.update)
+router.get('/update/id/:id', postController.update)
 router.post('/update', postController.updatePost)
 router.post('/delete', postController.destroy);
 
